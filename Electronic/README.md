@@ -1,0 +1,3 @@
+# Term Papers of Elctronic:
+Two-stage amplifier with gain=500:
+An amplifier is an electronic circuit that acts like a voltagecontrolled voltage source Amplifiers are electronic components made from a complex combination of resistors, capacitors and transistors. In this project, we first make the schematic of a two-stage amplifier circuit, and then by changing the resistances, we bring its gain to the desired value, and by analyzing its DC and AC states, we get its working area and gain and make sure of it.
