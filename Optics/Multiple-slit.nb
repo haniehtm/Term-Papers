@@ -1,0 +1,170 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7182,        160]
+NotebookOptionsPosition[      6801,        145]
+NotebookOutlinePosition[      7207,        161]
+CellTagsIndexPosition[      7164,        158]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 40, $CellContext`b$$ = 
+    0.01, $CellContext`g$$ = 0.065, $CellContext`k$$ = 5, $CellContext`se$$ = 
+    True, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$, 
+    Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`b$$], 0.01, "slit width (mm)"}, 0.005, 0.05, 
+      0.005}, {{
+       Hold[$CellContext`g$$], 0.03, "slit spacing (mm)"}, 0.025, 0.1, 
+      0.005}, {{
+       Hold[$CellContext`a$$], 40, "image width (mm)"}, 2, 80, 2}, {{
+       Hold[$CellContext`k$$], 2, "number of slits"}, {1, 2, 3, 4, 5, 6, 10, 
+      15}}, {{
+       Hold[$CellContext`se$$], False, "show screen"}, {True, False}}}, 
+    Typeset`size$$ = {370., {182.13403309800196`, 187.86596690199804`}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`b$2155589$$ = 0, $CellContext`g$2155590$$ = 
+    0, $CellContext`a$2155591$$ = 0, $CellContext`k$2155592$$ = 
+    0, $CellContext`se$2155593$$ = False}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 40, $CellContext`b$$ = 
+        0.01, $CellContext`g$$ = 0.03, $CellContext`k$$ = 
+        2, $CellContext`se$$ = False}, "ControllerVariables" :> {
+        Hold[$CellContext`b$$, $CellContext`b$2155589$$, 0], 
+        Hold[$CellContext`g$$, $CellContext`g$2155590$$, 0], 
+        Hold[$CellContext`a$$, $CellContext`a$2155591$$, 0], 
+        Hold[$CellContext`k$$, $CellContext`k$2155592$$, 0], 
+        Hold[$CellContext`se$$, $CellContext`se$2155593$$, False]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Pane[
+        Column[{
+          $CellContext`intensityPlot[
+           $CellContext`intensityData[$CellContext`b$$, $CellContext`g$$, \
+$CellContext`k$$, $CellContext`a$$]], 
+          If[$CellContext`se$$, 
+           $CellContext`patternPlot[
+            $CellContext`patternData[$CellContext`b$$, $CellContext`g$$, \
+$CellContext`k$$, $CellContext`a$$]], Null]}], ImageSize -> {370, 370}], 
+      "Specifications" :> {{{$CellContext`b$$, 0.01, "slit width (mm)"}, 
+         0.005, 0.05, 0.005, Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`g$$, 0.03, "slit spacing (mm)"}, 0.025, 0.1, 
+         0.005, Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`a$$, 40, "image width (mm)"}, 2, 80, 2, 
+         Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`k$$, 2, "number of slits"}, {1, 2, 3, 4, 5, 6, 
+         10, 15}, ControlType -> SetterBar, ControlPlacement -> 
+         Top}, {{$CellContext`se$$, False, "show screen"}, {True, False}, 
+         ControlPlacement -> Top}}, 
+      "Options" :> {
+       ControlPlacement -> Left, SynchronousUpdating -> False, 
+        TrackedSymbols :> {$CellContext`b$$, $CellContext`g$$, \
+$CellContext`k$$, $CellContext`a$$, $CellContext`se$$}}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{603., {234.63403309800196`, 240.36596690199804`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>(($CellContext`vectorSum = Compile[{{$CellContext`x, 
+           Blank[Real]}, {$CellContext`b$$, 
+           Blank[Real]}, {$CellContext`g$$, 
+           Blank[Real]}, {$CellContext`k$$, 
+           Blank[Integer]}}, 
+         Sum[
+          
+          Exp[((3174.6 Pi) 
+            I) (10^6 + ($CellContext`x - (-(($CellContext`k$$ - 
+                  1) ($CellContext`g$$/
+                  2)) + $CellContext`j $CellContext`g$$ - $CellContext`b$$/
+               2 + $CellContext`b$$ ($CellContext`i/41)))^2)^
+            Rational[1, 2]], {$CellContext`j, 0, $CellContext`k$$ - 
+           1}, {$CellContext`i, 1, 40}]]; $CellContext`intensityData[
+         Pattern[$CellContext`SlitWidth, 
+          Blank[]], 
+         Pattern[$CellContext`SlitSpacing, 
+          Blank[]], 
+         Pattern[$CellContext`SlitNumber, 
+          Blank[]], 
+         Pattern[$CellContext`ImageWidth, 
+          Blank[]]] := Module[{$CellContext`positionOnScreen}, 
+         Table[{$CellContext`positionOnScreen, 
+           Abs[(1/(40 $CellContext`SlitNumber)) \
+$CellContext`vectorSum[$CellContext`positionOnScreen, $CellContext`SlitWidth, \
+$CellContext`SlitSpacing, $CellContext`SlitNumber]]^2}, \
+{$CellContext`positionOnScreen, -$CellContext`ImageWidth, \
+$CellContext`ImageWidth, 0.1}]]; $CellContext`intensityPlot[
+         Pattern[$CellContext`data, 
+          Blank[]]] := 
+       ListLinePlot[$CellContext`data, InterpolationOrder -> 3, 
+         PlotRange -> {0, 1.1}, AxesLabel -> {None, "I"}, Filling -> Axis, 
+         ImageSize -> {370, 250}]; $CellContext`patternData[
+         Pattern[$CellContext`SlitWidth, 
+          Blank[]], 
+         Pattern[$CellContext`SlitSpacing, 
+          Blank[]], 
+         Pattern[$CellContext`SlitNumber, 
+          Blank[]], 
+         Pattern[$CellContext`ImageWidth, 
+          Blank[]]] := Flatten[
+         Table[
+          Map[{
+            Part[#, 1], $CellContext`i, 
+            Part[#, 2]}& , 
+           $CellContext`intensityData[$CellContext`SlitWidth, \
+$CellContext`SlitSpacing, $CellContext`SlitNumber, $CellContext`ImageWidth]], \
+{$CellContext`i, 0, 1}], 1]; $CellContext`patternPlot[
+         Pattern[$CellContext`data, 
+          Blank[]]] := 
+       ListDensityPlot[$CellContext`data, FrameTicks -> {Automatic, None}, 
+         PlotRange -> {0, Full}, ColorFunction -> GrayLevel, AspectRatio -> 
+         0.2, ImageSize -> {370, 100}]; Null); Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.917411226578356*^9},
+ CellID->122791344,ExpressionUUID->"dfa51b9a-95ab-4439-bc17-d0867544a1c6"]
+},
+WindowSize->{1440., 741.75},
+WindowMargins->{{-6, Automatic}, {Automatic, -6}},
+FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (January 30, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"47818c84-3a41-4502-b3a6-5ea3535a5094"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 6239, 123, 494, "Output",ExpressionUUID->"dfa51b9a-95ab-4439-bc17-d0867544a1c6",
+ CellID->122791344]
+}
+]
+*)
+
+(* End of internal cache information *)
+

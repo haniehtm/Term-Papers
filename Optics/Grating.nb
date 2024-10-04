@@ -1,0 +1,249 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9557,        239]
+NotebookOptionsPosition[      9061,        222]
+NotebookOutlinePosition[      9473,        238]
+CellTagsIndexPosition[      9430,        235]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Quiet", "[", 
+    RowBox[{"DensityPlot", "[", 
+     RowBox[{
+      RowBox[{"Evaluate", "[", 
+       RowBox[{"Log", "[", 
+        RowBox[{"1", "+", 
+         RowBox[{
+          RowBox[{"singleslitI", "[", 
+           RowBox[{"slitwidth", ",", "\[Lambda]", ",", "\[Theta]"}], "]"}], 
+          RowBox[{"gratingI", "[", 
+           RowBox[{"betweenslit", ",", 
+            RowBox[{
+             RowBox[{"2", "^", "32"}], "-", "1"}], ",", "\[Lambda]", ",", 
+            "\[Theta]"}], "]"}], 
+          RowBox[{"singleslitI", "[", 
+           RowBox[{"slitwidth", ",", "\[Lambda]", ",", "\[Phi]"}], "]"}], 
+          RowBox[{"gratingI", "[", 
+           RowBox[{"betweenslit", ",", 
+            RowBox[{
+             RowBox[{"2", "^", "32"}], "-", "1"}], ",", "\[Lambda]", ",", 
+            "\[Phi]"}], "]"}]}]}], "]"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"\[Theta]", ",", 
+        RowBox[{
+         RowBox[{"-", "\[Pi]"}], "/", "3"}], ",", 
+        RowBox[{"\[Pi]", "/", "3"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"\[Phi]", ",", 
+        RowBox[{
+         RowBox[{"-", "\[Pi]"}], "/", "3"}], ",", 
+        RowBox[{"\[Pi]", "/", "3"}]}], "}"}], ",", 
+      RowBox[{"ColorFunction", "\[Rule]", 
+       RowBox[{
+        RowBox[{"ColorData", "[", "\"\<VisibleSpectrum\>\"", "]"}], "[", 
+        "\[Lambda]", "]"}]}], ",", 
+      RowBox[{"PlotRange", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "Pi"}], "/", "3"}], ",", 
+           RowBox[{"Pi", "/", "3"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "Pi"}], "/", "3"}], ",", 
+           RowBox[{"Pi", "/", "3"}]}], "}"}]}], "}"}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"ClippingStyle", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"ColorData", "[", "\"\<VisibleSpectrum\>\"", "]"}], "[", 
+         "\[Lambda]", "]"}], "}"}]}], ",", 
+      RowBox[{"PlotRangeClipping", "\[Rule]", "False"}], ",", 
+      RowBox[{"ImageSize", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"500", ",", "400"}], "}"}]}], ",", 
+      RowBox[{"PlotPoints", "\[Rule]", "100"}], ",", 
+      RowBox[{"MaxRecursion", "\[Rule]", "0"}], ",", 
+      RowBox[{"PerformanceGoal", "\[Rule]", "\"\<Speed\>\""}], ",", 
+      RowBox[{"PlotRangePadding", "\[Rule]", 
+       RowBox[{"Scaled", "[", ".02", "]"}]}]}], "]"}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Lambda]", ",", "439", ",", "\"\<wavelength\>\""}], "}"}], 
+     ",", "400", ",", "800", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"slitwidth", ",", "702", ",", "\"\<slit width\>\""}], "}"}], 
+     ",", "100", ",", "2000", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"betweenslit", ",", "340", ",", "\"\<space between slits\>\""}],
+       "}"}], ",", "100", ",", "500", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   RowBox[{"Initialization", "\[RuleDelayed]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"gratingI", "[", 
+        RowBox[{
+        "distance_", ",", " ", "number_", ",", " ", "\[Lambda]_", ",", " ", 
+         "angle_"}], "]"}], " ", ":=", " ", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"number", "*", 
+          RowBox[{"Sinc", "[", 
+           RowBox[{"number", "*", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"Pi", "*", "distance"}], ")"}], "/", "\[Lambda]"}], 
+             ")"}], "*", "angle"}], "]"}]}], ")"}], "^", "2"}]}], ";", 
+      RowBox[{
+       RowBox[{"singleslitI", "[", 
+        RowBox[{"width_", ",", " ", "\[Lambda]_", ",", " ", "angle_"}], "]"}],
+        " ", ":=", " ", 
+       RowBox[{
+        RowBox[{"Sinc", "[", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"Pi", "*", "width"}], ")"}], "/", "\[Lambda]"}], ")"}], 
+          "*", "angle"}], "]"}], "^", "2"}]}]}], "}"}]}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",ExpressionUUID->"ff881a8c-6a8d-4011-a2e8-6fce507a1b4c"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`betweenslit$$ = 
+    500., $CellContext`slitwidth$$ = 1134., $CellContext`\[Lambda]$$ = 580., 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`\[Lambda]$$], 439, "wavelength"}, 400, 800}, {{
+       Hold[$CellContext`slitwidth$$], 702, "slit width"}, 100, 2000}, {{
+       Hold[$CellContext`betweenslit$$], 340, "space between slits"}, 100, 
+      500}}, Typeset`size$$ = {500., {198., 202.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = False}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`betweenslit$$ = 
+        340, $CellContext`slitwidth$$ = 702, $CellContext`\[Lambda]$$ = 439}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Quiet[
+        DensityPlot[
+         Evaluate[
+          Log[
+          1 + $CellContext`singleslitI[$CellContext`slitwidth$$, \
+$CellContext`\[Lambda]$$, $CellContext`\[Theta]] \
+$CellContext`gratingI[$CellContext`betweenslit$$, 2^32 - 
+              1, $CellContext`\[Lambda]$$, $CellContext`\[Theta]] \
+$CellContext`singleslitI[$CellContext`slitwidth$$, $CellContext`\[Lambda]$$, \
+$CellContext`\[Phi]] $CellContext`gratingI[$CellContext`betweenslit$$, 2^32 - 
+              1, $CellContext`\[Lambda]$$, $CellContext`\[Phi]]]], \
+{$CellContext`\[Theta], (-Pi)/3, Pi/3}, {$CellContext`\[Phi], (-Pi)/3, Pi/3}, 
+         ColorFunction -> 
+         ColorData["VisibleSpectrum"][$CellContext`\[Lambda]$$], 
+         PlotRange -> {{(-Pi)/3, Pi/3}, {(-Pi)/3, Pi/3}}, ClippingStyle -> {
+           ColorData["VisibleSpectrum"][$CellContext`\[Lambda]$$]}, 
+         PlotRangeClipping -> False, ImageSize -> {500, 400}, PlotPoints -> 
+         100, MaxRecursion -> 0, PerformanceGoal -> "Speed", PlotRangePadding -> 
+         Scaled[0.02]]], 
+      "Specifications" :> {{{$CellContext`\[Lambda]$$, 439, "wavelength"}, 
+         400, 800, Appearance -> 
+         "Labeled"}, {{$CellContext`slitwidth$$, 702, "slit width"}, 100, 
+         2000, Appearance -> 
+         "Labeled"}, {{$CellContext`betweenslit$$, 340, 
+          "space between slits"}, 100, 500, Appearance -> "Labeled"}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{548., {273.13403309800196`, 278.86596690199804`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`gratingI[
+          Pattern[$CellContext`distance, 
+           Blank[]], 
+          Pattern[$CellContext`number, 
+           Blank[]], 
+          Pattern[$CellContext`\[Lambda], 
+           Blank[]], 
+          Pattern[$CellContext`angle, 
+           Blank[]]] := ($CellContext`number 
+          Sinc[$CellContext`number ((
+              Pi $CellContext`distance)/$CellContext`\[Lambda]) \
+$CellContext`angle])^2; $CellContext`singleslitI[
+          Pattern[$CellContext`width, 
+           Blank[]], 
+          Pattern[$CellContext`\[Lambda], 
+           Blank[]], 
+          Pattern[$CellContext`angle, 
+           Blank[]]] := 
+        Sinc[((Pi $CellContext`width)/$CellContext`\[Lambda]) \
+$CellContext`angle]^2}; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.917853383040934*^9, 3.9178534352341337`*^9},
+ CellLabel->"Out[1]=",ExpressionUUID->"34d8cfe8-a615-4a48-957c-7ecb8d695c73"]
+}, Open  ]]
+},
+WindowSize->{1047., 729.75},
+WindowMargins->{{18.75, Automatic}, {Automatic, 23.25}},
+FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (January 30, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"2a6dac94-0418-4756-b1b8-8286d66872f9"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 4414, 115, 257, "Input",ExpressionUUID->"ff881a8c-6a8d-4011-a2e8-6fce507a1b4c"],
+Cell[4997, 139, 4048, 80, 594, "Output",ExpressionUUID->"34d8cfe8-a615-4a48-957c-7ecb8d695c73"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

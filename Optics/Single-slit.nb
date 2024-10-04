@@ -1,0 +1,331 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     13610,        321]
+NotebookOptionsPosition[     13119,        304]
+NotebookOutlinePosition[     13525,        320]
+CellTagsIndexPosition[     13482,        317]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Pane", "[", 
+    RowBox[{
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"f", ",", "dp", ",", "pl", ",", "text"}], "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"f", "=", 
+         FractionBox[
+          RowBox[{
+           RowBox[{"Sin", "[", 
+            FractionBox[
+             RowBox[{"Pi", "*", "b", "*", "X"}], 
+             RowBox[{"\[Lambda]", "*", "d"}]], "]"}], "^", "2"}], 
+          RowBox[{
+           RowBox[{"(", 
+            FractionBox[
+             RowBox[{"Pi", "*", "b", "*", "X"}], 
+             RowBox[{"\[Lambda]", "*", "d"}]], ")"}], "^", "2"}]]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"dp", "=", 
+         RowBox[{"DensityPlot", "[", 
+          RowBox[{"f", ",", 
+           RowBox[{"{", 
+            RowBox[{"X", ",", 
+             RowBox[{"-", "m"}], ",", "m"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"Y", ",", "0", ",", "1"}], "}"}], ",", 
+           RowBox[{"PlotPoints", "\[Rule]", "40"}], ",", 
+           RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+           RowBox[{"ImageSize", "\[Rule]", 
+            RowBox[{"{", 
+             RowBox[{"350", ",", "350"}], "}"}]}], ",", 
+           RowBox[{"ImagePadding", "\[Rule]", "20"}], ",", 
+           RowBox[{"Frame", "->", "True"}]}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"pl", "=", 
+         RowBox[{"Plot", "[", 
+          RowBox[{"f", ",", 
+           RowBox[{"{", 
+            RowBox[{"X", ",", 
+             RowBox[{"-", "m"}], ",", "m"}], "}"}], ",", 
+           RowBox[{"PlotPoints", "\[Rule]", "20"}], ",", 
+           RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+           RowBox[{"ImageSize", "\[Rule]", 
+            RowBox[{"{", 
+             RowBox[{"350", ",", "350"}], "}"}]}], ",", 
+           RowBox[{"ImagePadding", "\[Rule]", "20"}], ",", 
+           RowBox[{"Frame", "->", "True"}], ",", 
+           RowBox[{"PlotStyle", "\[Rule]", 
+            RowBox[{"{", 
+             RowBox[{"Thick", ",", "Green"}], "}"}]}]}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"text", "=", 
+         RowBox[{"Row", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<m\>\"", ",", "Italic"}], "]"}], ",", 
+            "\"\<, the distance from the midpoint of the edges\\n     of the \
+geometric shadow, mm\>\""}], "}"}], "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"Text", "@", 
+         RowBox[{"Switch", "[", 
+          RowBox[{"a", ",", "\[IndentingNewLine]", "1", ",", 
+           RowBox[{"Labeled", "[", 
+            RowBox[{"dp", ",", 
+             RowBox[{"{", 
+              RowBox[{"text", ",", 
+               RowBox[{"Rotate", "[", 
+                RowBox[{"\"\<\\n\\nheight of the fringe pattern\>\"", ",", 
+                 RowBox[{"Pi", "/", "2"}]}], "]"}]}], "}"}], ",", "All"}], 
+            "]"}], ",", "\[IndentingNewLine]", "2", ",", 
+           RowBox[{"Labeled", "[", 
+            RowBox[{"pl", ",", 
+             RowBox[{"{", 
+              RowBox[{"text", ",", 
+               RowBox[{"Rotate", "[", 
+                RowBox[{"\"\<\\nintensity\>\"", ",", 
+                 RowBox[{"Pi", "/", "2"}]}], "]"}]}], "}"}], ",", "All"}], 
+            "]"}], ",", "\[IndentingNewLine]", "3", ",", 
+           RowBox[{"Labeled", "[", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"Show", "[", "\[IndentingNewLine]", 
+              RowBox[{"dp", ",", "\[IndentingNewLine]", "pl"}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"text", ",", 
+               RowBox[{"Rotate", "[", 
+                RowBox[{
+                "\"\<\\nheight of the fringe pattern \\n     intensity\>\"", 
+                 ",", 
+                 RowBox[{"Pi", "/", "2"}]}], "]"}]}], "}"}], ",", "All"}], 
+            "]"}]}], "]"}]}]}]}], "\[IndentingNewLine]", "]"}], ",", 
+     RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   "\"\<distance from the midpoint of the edges of the geometric shadow, mm\>\
+\"", ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"m", ",", "0.3"}], "}"}], ",", "0.01", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", "\"\<\>\"", ",", "\[IndentingNewLine]", 
+   RowBox[{"Row", "[", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Control", "@", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"b", ",", "0.3", ",", "\"\<width of slit, mm\>\""}], "}"}], 
+         ",", "0.01", ",", "1", ",", "0.01", ",", 
+         RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}], ",", " ", 
+         RowBox[{"ImageSize", "\[Rule]", " ", "Small"}]}], "}"}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Control", "@", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\[Lambda]", ",", 
+           RowBox[{
+            RowBox[{"6", "*", 
+             RowBox[{"10", "^", 
+              RowBox[{"-", "5"}]}]}], "//", "N"}], ",", 
+           "\"\<wavelength, cm\>\""}], "}"}], ",", 
+         RowBox[{
+          RowBox[{"4", "*", 
+           RowBox[{"10", "^", 
+            RowBox[{"-", "5"}]}]}], "//", "N"}], ",", 
+         RowBox[{
+          RowBox[{"8", "*", 
+           RowBox[{"10", "^", 
+            RowBox[{"-", "5"}]}]}], "//", "N"}], ",", 
+         RowBox[{"1", "*", 
+          RowBox[{"10", "^", 
+           RowBox[{"-", "5"}]}]}], ",", 
+         RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}], ",", 
+         RowBox[{"ImageSize", "\[Rule]", " ", "Small"}]}], "}"}]}]}], 
+     "\[IndentingNewLine]", "}"}], "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"Row", "[", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Control", "@", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+          "d", ",", "100", ",", 
+           "\"\<distance from\\nslit to screen, cm\>\""}], "}"}], ",", "10", 
+         ",", "410", ",", "50", ",", 
+         RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}], ",", " ", 
+         RowBox[{"ImageSize", "\[Rule]", " ", "Small"}]}], "}"}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Control", "@", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"a", ",", "1", ",", "\"\<plots\>\""}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"1", "\[Rule]", "\"\<diffraction pattern\>\""}], ",", 
+           RowBox[{"2", "\[Rule]", "\"\<intensity plot\>\""}], ",", 
+           RowBox[{"3", "\[Rule]", "\"\<combined plot\>\""}]}], "}"}], ",", 
+         RowBox[{"ControlType", "\[Rule]", "PopupMenu"}]}], "}"}]}]}], 
+     "\[IndentingNewLine]", "}"}], "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"TrackedSymbols", "\[RuleDelayed]", 
+    RowBox[{"{", 
+     RowBox[{"m", ",", "b", ",", "\[Lambda]", ",", "d", ",", "a"}], "}"}]}]}],
+   "]"}]], "Input",
+ CellLabel->"In[2]:=",ExpressionUUID->"38ce5a43-e03d-443f-ab66-c3eed3a8eeea"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 1, $CellContext`b$$ = 
+    0.3, $CellContext`d$$ = 100, $CellContext`m$$ = 
+    0.3, $CellContext`\[Lambda]$$ = 0.00006, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[
+      "distance from the midpoint of the edges of the geometric shadow, mm"], 
+      Manipulate`Dump`ThisIsNotAControl}, {{
+       Hold[$CellContext`m$$], 0.3}, 0.01, 1}, {
+      Hold[""], Manipulate`Dump`ThisIsNotAControl}, {{
+       Hold[$CellContext`b$$], 0.3, "width of slit, mm"}, 0.01, 1, 0.01}, {{
+       Hold[$CellContext`\[Lambda]$$], 0.00006, "wavelength, cm"}, 0.00004, 
+      0.00008, 
+      Rational[1, 100000]}, {
+      Hold[
+       Row[{
+         Manipulate`Place[1], 
+         Manipulate`Place[2]}]], Manipulate`Dump`ThisIsNotAControl}, {{
+       Hold[$CellContext`d$$], 100, "distance from\nslit to screen, cm"}, 10, 
+      410, 50}, {{
+       Hold[$CellContext`a$$], 1, "plots"}, {
+      1 -> "diffraction pattern", 2 -> "intensity plot", 3 -> 
+       "combined plot"}}, {
+      Hold[
+       Row[{
+         Manipulate`Place[3], 
+         Manipulate`Place[4]}]], Manipulate`Dump`ThisIsNotAControl}}, 
+    Typeset`size$$ = {407., {193.13403309800196`, 198.86596690199804`}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     2, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 1, $CellContext`b$$ = 
+        0.3, $CellContext`d$$ = 100, $CellContext`m$$ = 
+        0.3, $CellContext`\[Lambda]$$ = 0.00006}, "ControllerVariables" :> {},
+       "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Pane[
+        Module[{$CellContext`f$, $CellContext`dp$, $CellContext`pl$, \
+$CellContext`text$}, $CellContext`f$ = 
+          Sin[Pi $CellContext`b$$ $CellContext`X/($CellContext`\[Lambda]$$ \
+$CellContext`d$$)]^2/(
+            Pi $CellContext`b$$ $CellContext`X/($CellContext`\[Lambda]$$ \
+$CellContext`d$$))^2; $CellContext`dp$ = 
+          DensityPlot[$CellContext`f$, {$CellContext`X, -$CellContext`m$$, \
+$CellContext`m$$}, {$CellContext`Y, 0, 1}, PlotPoints -> 40, PlotRange -> All,
+             ImageSize -> {350, 350}, ImagePadding -> 20, Frame -> 
+            True]; $CellContext`pl$ = 
+          Plot[$CellContext`f$, {$CellContext`X, -$CellContext`m$$, \
+$CellContext`m$$}, PlotPoints -> 20, PlotRange -> All, 
+            ImageSize -> {350, 350}, ImagePadding -> 20, Frame -> True, 
+            PlotStyle -> {Thick, Green}]; $CellContext`text$ = Row[{
+             Style["m", Italic], 
+             ", the distance from the midpoint of the edges\n     of the \
+geometric shadow, mm"}]; Text[
+           Switch[$CellContext`a$$, 1, 
+            Labeled[$CellContext`dp$, {$CellContext`text$, 
+              Rotate["\n\nheight of the fringe pattern", Pi/2]}, All], 2, 
+            Labeled[$CellContext`pl$, {$CellContext`text$, 
+              Rotate["\nintensity", Pi/2]}, All], 3, 
+            Labeled[
+             Show[$CellContext`dp$, $CellContext`pl$], {$CellContext`text$, 
+              Rotate[
+              "\nheight of the fringe pattern \n     intensity", Pi/2]}, 
+             All]]]], Alignment -> Center], 
+      "Specifications" :> {
+       "distance from the midpoint of the edges of the geometric shadow, mm", \
+{{$CellContext`m$$, 0.3}, 0.01, 1, Appearance -> "Labeled"}, 
+        "", {{$CellContext`b$$, 0.3, "width of slit, mm"}, 0.01, 1, 0.01, 
+         Appearance -> "Labeled", ImageSize -> Small, ControlPlacement -> 
+         1}, {{$CellContext`\[Lambda]$$, 0.00006, "wavelength, cm"}, 0.00004, 
+         0.00008, 
+         Rational[1, 100000], Appearance -> "Labeled", ImageSize -> Small, 
+         ControlPlacement -> 2}, 
+        Row[{
+          Manipulate`Place[1], 
+          Manipulate`Place[2]}], {{$CellContext`d$$, 100, 
+          "distance from\nslit to screen, cm"}, 10, 410, 50, Appearance -> 
+         "Labeled", ImageSize -> Small, ControlPlacement -> 
+         3}, {{$CellContext`a$$, 1, "plots"}, {
+         1 -> "diffraction pattern", 2 -> "intensity plot", 3 -> 
+          "combined plot"}, ControlType -> PopupMenu, ControlPlacement -> 4}, 
+        Row[{
+          Manipulate`Place[3], 
+          Manipulate`Place[4]}]}, 
+      "Options" :> {
+       TrackedSymbols :> {$CellContext`m$$, $CellContext`b$$, $CellContext`\
+\[Lambda]$$, $CellContext`d$$, $CellContext`a$$}}, "DefaultOptions" :> {}],
+     ImageSizeCache->{455., {273.13403309800196`, 278.86596690199804`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.9174105405800457`*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"d452b131-b779-4cc7-a8fd-0d9046101e9c"]
+}, Open  ]]
+},
+WindowSize->{1440., 741.75},
+WindowMargins->{{-6, Automatic}, {Automatic, -6}},
+FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (January 30, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"e5012ae4-4121-4dcc-a64b-384c880c0e52"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 7159, 172, 583, "Input",ExpressionUUID->"38ce5a43-e03d-443f-ab66-c3eed3a8eeea"],
+Cell[7742, 196, 5361, 105, 594, "Output",ExpressionUUID->"d452b131-b779-4cc7-a8fd-0d9046101e9c"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

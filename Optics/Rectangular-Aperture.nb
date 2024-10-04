@@ -1,0 +1,316 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12812,        306]
+NotebookOptionsPosition[     12317,        289]
+NotebookOutlinePosition[     12728,        305]
+CellTagsIndexPosition[     12685,        302]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Manipulate", "[", 
+   RowBox[{
+    RowBox[{"ContourPlot", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"Sin", "[", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"Pi", "*", "b", "*", "x"}], ")"}], "/", 
+             RowBox[{"(", 
+              RowBox[{"\[Lambda]", " ", "=", " ", 
+               RowBox[{
+                RowBox[{"Which", "[", 
+                 RowBox[{
+                  RowBox[{"color", "\[Equal]", "\"\<violet\>\""}], ",", 
+                  RowBox[{"4", "*", 
+                   RowBox[{"10", "^", 
+                    RowBox[{"(", 
+                    RowBox[{"-", "5"}], ")"}]}]}], " ", ",", 
+                  RowBox[{"color", "\[Equal]", "\"\<green\>\""}], ",", 
+                  RowBox[{"5", "*", 
+                   RowBox[{"10", "^", 
+                    RowBox[{"(", 
+                    RowBox[{"-", "5"}], ")"}]}]}], ",", 
+                  RowBox[{"color", "\[Equal]", "\"\<orange\>\""}], ",", 
+                  RowBox[{"6", "*", 
+                   RowBox[{"10", "^", 
+                    RowBox[{"(", 
+                    RowBox[{"-", "5"}], ")"}]}]}]}], "]"}], "*", "z"}]}], 
+              ")"}]}], "]"}], "/", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"Pi", "*", "b", "*", "x"}], ")"}], "/", 
+             RowBox[{"(", 
+              RowBox[{"\[Lambda]", " ", "=", " ", 
+               RowBox[{
+                RowBox[{"Which", "[", 
+                 RowBox[{
+                  RowBox[{"color", "\[Equal]", "\"\<violet\>\""}], ",", 
+                  RowBox[{"4", "*", 
+                   RowBox[{"10", "^", 
+                    RowBox[{"(", 
+                    RowBox[{"-", "5"}], ")"}]}]}], " ", ",", 
+                  RowBox[{"color", "\[Equal]", "\"\<green\>\""}], ",", 
+                  RowBox[{"5", "*", 
+                   RowBox[{"10", "^", 
+                    RowBox[{"(", 
+                    RowBox[{"-", "5"}], ")"}]}]}], ",", 
+                  RowBox[{"color", "\[Equal]", "\"\<orange\>\""}], ",", 
+                  RowBox[{"6", "*", 
+                   RowBox[{"10", "^", 
+                    RowBox[{"(", 
+                    RowBox[{"-", "5"}], ")"}]}]}]}], "]"}], "*", "z"}]}], 
+              ")"}]}], ")"}]}], ")"}], "^", "2"}], ")"}], "*", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"Sin", "[", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"Pi", "*", "a", "*", "y"}], ")"}], "/", 
+            RowBox[{"(", 
+             RowBox[{"\[Lambda]", " ", "=", " ", 
+              RowBox[{
+               RowBox[{"Which", "[", 
+                RowBox[{
+                 RowBox[{"color", "\[Equal]", "\"\<violet\>\""}], ",", 
+                 RowBox[{"4", "*", 
+                  RowBox[{"10", "^", 
+                   RowBox[{"(", 
+                    RowBox[{"-", "5"}], ")"}]}]}], " ", ",", 
+                 RowBox[{"color", "\[Equal]", "\"\<green\>\""}], ",", 
+                 RowBox[{"5", "*", 
+                  RowBox[{"10", "^", 
+                   RowBox[{"(", 
+                    RowBox[{"-", "5"}], ")"}]}]}], ",", 
+                 RowBox[{"color", "\[Equal]", "\"\<orange\>\""}], ",", 
+                 RowBox[{"6", "*", 
+                  RowBox[{"10", "^", 
+                   RowBox[{"(", 
+                    RowBox[{"-", "5"}], ")"}]}]}]}], "]"}], "*", "z"}]}], 
+             ")"}]}], "]"}], "/", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"Pi", "*", "a", "*", "y"}], ")"}], "/", 
+            RowBox[{"(", 
+             RowBox[{"\[Lambda]", " ", "=", " ", 
+              RowBox[{
+               RowBox[{"Which", "[", 
+                RowBox[{
+                 RowBox[{"color", "\[Equal]", "\"\<violet\>\""}], ",", 
+                 RowBox[{"4", "*", 
+                  RowBox[{"10", "^", 
+                   RowBox[{"(", 
+                    RowBox[{"-", "5"}], ")"}]}]}], " ", ",", 
+                 RowBox[{"color", "\[Equal]", "\"\<green\>\""}], ",", 
+                 RowBox[{"5", "*", 
+                  RowBox[{"10", "^", 
+                   RowBox[{"(", 
+                    RowBox[{"-", "5"}], ")"}]}]}], ",", 
+                 RowBox[{"color", "\[Equal]", "\"\<orange\>\""}], ",", 
+                 RowBox[{"6", "*", 
+                  RowBox[{"10", "^", 
+                   RowBox[{"(", 
+                    RowBox[{"-", "5"}], ")"}]}]}]}], "]"}], "*", "z"}]}], 
+             ")"}]}], ")"}]}], ")"}], "^", "2"}]}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", 
+        RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"y", ",", 
+        RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+      RowBox[{"ColorFunction", "\[Rule]", 
+       RowBox[{"Which", "[", 
+        RowBox[{
+         RowBox[{"color", "\[Equal]", "\"\<violet\>\""}], ",", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"Blend", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"Black", ",", "Purple", ",", " ", "LightPurple"}], 
+              "}"}], ",", "#1"}], "]"}], "&"}], ")"}], ",", 
+         RowBox[{"color", "\[Equal]", "\"\<green\>\""}], ",", 
+         "\"\<AvocadoColors\>\"", ",", 
+         RowBox[{"color", "\[Equal]", "\"\<orange\>\""}], ",", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"Blend", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+              "Black", ",", "Red", ",", "Orange", ",", " ", "LightOrange"}], 
+              "}"}], ",", "#1"}], "]"}], "&"}], ")"}]}], "]"}]}], ",", 
+      RowBox[{"PlotLegends", "\[Rule]", "Automatic"}], ",", 
+      RowBox[{"PlotLabel", "\[Rule]", "\"\<intensity profile\>\""}], ",", 
+      RowBox[{"FrameLabel", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Row", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<x\>\"", ",", "Italic"}], "]"}], ",", 
+            "\"\< (cm)\>\""}], "}"}], "]"}], ",", 
+         RowBox[{"Row", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<y\>\"", ",", "Italic"}], "]"}], ",", 
+            "\"\< (cm)\>\""}], "}"}], "]"}]}], "}"}]}], ",", " ", 
+      RowBox[{"Contours", "\[Rule]", "100"}], ",", " ", 
+      RowBox[{"ContourStyle", "\[Rule]", "None"}], ",", 
+      RowBox[{"PerformanceGoal", "\[Rule]", "\"\<Quality\>\""}]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"b", ",", "0.01", ",", "\"\<length (cm)\>\""}], "}"}], ",", 
+      "0.01", ",", "0.1", ",", "0.01", ",", "Setter"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"a", ",", "0.01", ",", "\"\<breadth (cm)\>\""}], "}"}], ",", 
+      "0.01", ",", "0.1", ",", "0.01", ",", "Setter"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"z", ",", "100", ",", "\"\<distance (cm)\>\""}], "}"}], ",", 
+      "100", ",", "1000", ",", "100", ",", "Setter"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"color", ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<violet\>\"", ",", "\"\<green\>\"", ",", "\"\<orange\>\""}], 
+       "}"}]}], "}"}]}], "]"}], "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{3.9173248287297583`*^9},
+ CellLabel->"In[1]:=",ExpressionUUID->"1b7fb5c9-2ec3-495f-a6e0-5b994998b4df"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 0.01, $CellContext`b$$ = 
+    0.01, $CellContext`color$$ = "violet", $CellContext`z$$ = 100, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`b$$], 0.01, "length (cm)"}, 0.01, 0.1, 0.01}, {{
+       Hold[$CellContext`a$$], 0.01, "breadth (cm)"}, 0.01, 0.1, 0.01}, {{
+       Hold[$CellContext`z$$], 100, "distance (cm)"}, 100, 1000, 100}, {
+      Hold[$CellContext`color$$], {"violet", "green", "orange"}}}, 
+    Typeset`size$$ = {443., {185., 190.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 0.01, $CellContext`b$$ = 
+        0.01, $CellContext`color$$ = "violet", $CellContext`z$$ = 100}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      ContourPlot[(
+          Sin[(Pi $CellContext`b$$ $CellContext`x)/($CellContext`\[Lambda] = 
+            Which[$CellContext`color$$ == "violet", 4 
+               10^(-5), $CellContext`color$$ == "green", 5 
+               10^(-5), $CellContext`color$$ == "orange", 6 
+               10^(-5)] $CellContext`z$$)]/((
+           Pi $CellContext`b$$ $CellContext`x)/($CellContext`\[Lambda] = 
+          Which[$CellContext`color$$ == "violet", 4 
+             10^(-5), $CellContext`color$$ == "green", 5 
+             10^(-5), $CellContext`color$$ == "orange", 6 
+             10^(-5)] $CellContext`z$$)))^2 (
+          Sin[(Pi $CellContext`a$$ $CellContext`y)/($CellContext`\[Lambda] = 
+            Which[$CellContext`color$$ == "violet", 4 
+               10^(-5), $CellContext`color$$ == "green", 5 
+               10^(-5), $CellContext`color$$ == "orange", 6 
+               10^(-5)] $CellContext`z$$)]/((
+           Pi $CellContext`a$$ $CellContext`y)/($CellContext`\[Lambda] = 
+          Which[$CellContext`color$$ == "violet", 4 
+             10^(-5), $CellContext`color$$ == "green", 5 
+             10^(-5), $CellContext`color$$ == "orange", 6 
+             10^(-5)] $CellContext`z$$)))^2, {$CellContext`x, -2, 
+         2}, {$CellContext`y, -2, 2}, ColorFunction -> 
+        Which[$CellContext`color$$ == "violet", 
+          Blend[{Black, Purple, LightPurple}, #]& , $CellContext`color$$ == 
+          "green", "AvocadoColors", $CellContext`color$$ == "orange", 
+          Blend[{Black, Red, Orange, LightOrange}, #]& ], PlotLegends -> 
+        Automatic, PlotLabel -> "intensity profile", FrameLabel -> {
+          Row[{
+            Style["x", Italic], " (cm)"}], 
+          Row[{
+            Style["y", Italic], " (cm)"}]}, Contours -> 100, ContourStyle -> 
+        None, PerformanceGoal -> "Quality"], 
+      "Specifications" :> {{{$CellContext`b$$, 0.01, "length (cm)"}, 0.01, 
+         0.1, 0.01, ControlType -> 
+         Setter}, {{$CellContext`a$$, 0.01, "breadth (cm)"}, 0.01, 0.1, 0.01, 
+         ControlType -> Setter}, {{$CellContext`z$$, 100, "distance (cm)"}, 
+         100, 1000, 100, ControlType -> Setter}, {$CellContext`color$$, {
+         "violet", "green", "orange"}}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{491., {264.13403309800196`, 269.86596690199804`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.9173248334846787`*^9},
+ CellLabel->"Out[1]=",ExpressionUUID->"bb6c2f84-196c-4200-b2e7-50a7d5e7306b"]
+}, Open  ]]
+},
+WindowSize->{1264.5, 663.},
+WindowMargins->{{18.75, Automatic}, {Automatic, 23.25}},
+FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (January 30, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"bfdf3b65-5bd1-4bbc-b2cd-ed508cb9cd61"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 7580, 187, 276, "Input",ExpressionUUID->"1b7fb5c9-2ec3-495f-a6e0-5b994998b4df"],
+Cell[8163, 211, 4138, 75, 553, "Output",ExpressionUUID->"bb6c2f84-196c-4200-b2e7-50a7d5e7306b"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

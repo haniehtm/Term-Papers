@@ -1,0 +1,1985 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     89924,       1975]
+NotebookOptionsPosition[     89406,       1957]
+NotebookOutlinePosition[     89812,       1973]
+CellTagsIndexPosition[     89769,       1970]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"M", "[", 
+    RowBox[{
+    "measurement", ",", "\[Rho]", ",", "resolution", ",", "scale", ",", "n", 
+     ",", "height", ",", "width", ",", "spacing"}], "]"}], ",", 
+   "\[IndentingNewLine]", "\"\<display function\>\"", ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"measurement", ",", "Identity", ",", "\"\<\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+       "SqrtSqrt", "\[Rule]", 
+        "\"\<|\!\(\*SubscriptBox[\(E\), \(xy\)]\)\!\(\*SuperscriptBox[\(|\), \
+\(1/2\)]\)\>\""}], ",", 
+       RowBox[{"Sqrt", "\[Rule]", 
+        SuperscriptBox["\"\<|\!\(\*SubscriptBox[\(E\), \(xy\)]\)|\>\"", 
+         RowBox[{"Invisible", "[", "2", "]"}]]}], ",", 
+       RowBox[{
+       "Identity", "\[Rule]", 
+        "\"\<|\!\(\*SubscriptBox[\(E\), \(xy\)]\)\!\(\*SuperscriptBox[\(|\), \
+\(2\)]\)\>\""}], ",", 
+       RowBox[{
+       "Reverse", "\[Rule]", 
+        "\"\<\!\(\*SubscriptBox[\(\[Rho]\), \(xy\)]\)\>\""}]}], " ", "}"}]}], 
+    "}"}], ",", "\[IndentingNewLine]", "\"\<\>\"", ",", 
+   "\[IndentingNewLine]", "\"\<cause of diffraction\>\"", ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Rho]", ",", "3", ",", "\"\<\>\""}], "}"}], ",", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"1", "\[Rule]", 
+        RowBox[{"symmetryIcon", "[", "4", "]"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"2", "\[Rule]", 
+        RowBox[{"symmetryIcon", "[", "6", "]"}]}], ",", 
+       RowBox[{"3", "\[Rule]", 
+        RowBox[{"forbiddenSymmetryIcon", "[", "4", "]"}]}], ",", 
+       RowBox[{"4", "\[Rule]", 
+        RowBox[{"forbiddenSymmetryIcon", "[", "5", "]"}]}], ",", 
+       RowBox[{"0", "\[Rule]", "\"\< I I \>\""}], ",", 
+       RowBox[{"5", "\[Rule]", 
+        RowBox[{"symmetryIcon", "[", "100", "]"}]}]}], "}"}], ",", 
+     RowBox[{"ControlType", "\[Rule]", "SetterBar"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", "\"\<\>\"", ",", "\[IndentingNewLine]", 
+   "\"\<sampling resolution\>\"", ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"resolution", ",", "9", ",", "\"\<\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"5", "\[Rule]", "\"\<32\>\""}], ",", 
+       RowBox[{"6", "\[Rule]", "\"\<64\>\""}], ",", 
+       RowBox[{"7", "\[Rule]", "\"\<128\>\""}], ",", 
+       RowBox[{"8", "\[Rule]", "\"\<256\>\""}], ",", 
+       RowBox[{"9", "\[Rule]", "\"\<512\>\""}]}], "}"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", "\"\<\>\"", ",", "\[IndentingNewLine]", 
+   "\"\<\[Lambda] scale\>\"", ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"scale", ",", "50", ",", "\"\<\>\""}], "}"}], ",", "2", ",", 
+     "100", ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Small"}], ",", 
+     RowBox[{"Appearance", "->", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", "Delimiter", ",", "\[IndentingNewLine]", "\"\<\>\"",
+    ",", "\[IndentingNewLine]", "\"\<number of slits\>\"", ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"n", ",", "2", ",", "\"\<\>\""}], "}"}], ",", 
+     RowBox[{"Range", "[", "40", "]"}], ",", 
+     RowBox[{"Enabled", "\[RuleDelayed]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"SameQ", "[", 
+         RowBox[{"0", ",", "\[Rho]"}], "]"}], ",", "True", ",", "False"}], 
+       "]"}]}]}], "}"}], ",", "\[IndentingNewLine]", "\"\<\>\"", ",", 
+   "\[IndentingNewLine]", "\"\<height of slit\>\"", ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"height", ",", "4", ",", "\"\<\>\""}], "}"}], ",", "0", ",", 
+     "100", ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Small"}], ",", 
+     RowBox[{"Enabled", "\[RuleDelayed]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"SameQ", "[", 
+         RowBox[{"0", ",", "\[Rho]"}], "]"}], ",", "True", ",", "False"}], 
+       "]"}]}], ",", 
+     RowBox[{"Appearance", "->", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", "\"\<\>\"", ",", "\[IndentingNewLine]", 
+   "\"\<width of slit\>\"", ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"width", ",", "1", ",", "\"\<\>\""}], "}"}], ",", "0", ",", 
+     "10", ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Small"}], ",", 
+     RowBox[{"Enabled", "\[RuleDelayed]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"SameQ", "[", 
+         RowBox[{"0", ",", "\[Rho]"}], "]"}], ",", "True", ",", "False"}], 
+       "]"}]}], ",", 
+     RowBox[{"Appearance", "->", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", "\"\<\>\"", ",", "\[IndentingNewLine]", 
+   "\"\<spacing between slits\>\"", ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"spacing", ",", "2", ",", "\"\<\>\""}], "}"}], ",", "0", ",", 
+     "20", ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Small"}], ",", 
+     RowBox[{"Enabled", "\[RuleDelayed]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"SameQ", "[", 
+         RowBox[{"0", ",", "\[Rho]"}], "]"}], ",", "True", ",", "False"}], 
+       "]"}]}], ",", 
+     RowBox[{"Appearance", "->", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"TrackedSymbols", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"Initialization", "\[RuleDelayed]", 
+    RowBox[{"(", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"A8", "=", 
+       RowBox[{"Eigenvectors", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", "0", ",", 
+            RowBox[{"-", "1"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "1", ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", "1", ",", "0"}], "}"}]}], "}"}], 
+        "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"u8", "=", 
+       RowBox[{"With", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"v", "=", 
+           RowBox[{"Function", "[", 
+            RowBox[{
+             RowBox[{"{", "a", "}"}], ",", 
+             RowBox[{"Part", "[", 
+              RowBox[{"A8", ",", "a"}], "]"}]}], "]"}]}], "}"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"RootApproximant", "@", 
+          RowBox[{"Transpose", "[", 
+           RowBox[{"Normalize", "/@", 
+            RowBox[{"{", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"v", "[", "1", "]"}], "+", 
+               RowBox[{"v", "[", "2", "]"}]}], ",", "\[IndentingNewLine]", 
+              RowBox[{"I", " ", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"v", "[", "1", "]"}], "-", 
+                 RowBox[{"v", "[", "2", "]"}]}], ")"}]}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"v", "[", "3", "]"}], "+", 
+               RowBox[{"v", "[", "4", "]"}]}], ",", "\[IndentingNewLine]", 
+              RowBox[{"I", " ", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"v", "[", "3", "]"}], "-", 
+                 RowBox[{"v", "[", "4", "]"}]}], ")"}]}]}], 
+             "\[IndentingNewLine]", "}"}]}], "]"}]}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"A10", "=", 
+       RowBox[{"Eigenvectors", "[", 
+        RowBox[{"{", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", 
+            RowBox[{"-", "1"}]}], "}"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "1", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", "1", ",", "0", ",", "0"}], "}"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", "0", ",", "1", ",", "0"}], "}"}]}], 
+         "\[IndentingNewLine]", "}"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"u10", "=", 
+       RowBox[{"With", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"v", "=", 
+           RowBox[{"Function", "[", 
+            RowBox[{
+             RowBox[{"{", "a", "}"}], ",", 
+             RowBox[{"Part", "[", 
+              RowBox[{"A10", ",", "a"}], "]"}]}], "]"}]}], "}"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Simplify", "@", 
+          RowBox[{"Re", "@", 
+           RowBox[{"ToRadicals", "[", 
+            RowBox[{"Transpose", "[", 
+             RowBox[{
+              RowBox[{"1", "/", 
+               RowBox[{"Sqrt", "[", "10", "]"}]}], " ", 
+              RowBox[{"{", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"v", "[", "1", "]"}], "+", 
+                 RowBox[{"v", "[", "2", "]"}]}], ",", "\[IndentingNewLine]", 
+                RowBox[{"I", " ", 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"v", "[", "1", "]"}], "-", 
+                   RowBox[{"v", "[", "2", "]"}]}], ")"}]}], ",", 
+                "\[IndentingNewLine]", 
+                RowBox[{
+                 RowBox[{"v", "[", "3", "]"}], "+", 
+                 RowBox[{"v", "[", "4", "]"}]}], ",", "\[IndentingNewLine]", 
+                RowBox[{"I", " ", 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"v", "[", "3", "]"}], "-", 
+                   RowBox[{"v", "[", "4", "]"}]}], ")"}]}], ",", 
+                "\[IndentingNewLine]", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"1", ",", "1", ",", "1", ",", "1", ",", "1"}], 
+                  "}"}], "*", 
+                 RowBox[{"Sqrt", "[", "2", "]"}]}]}], "\[IndentingNewLine]", 
+               "}"}]}], "]"}], "]"}]}]}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"u4", " ", "=", " ", 
+       RowBox[{
+        RowBox[{"1", "/", "3"}], 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"1", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "1"}], "}"}]}], "}"}]}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"u6", " ", "=", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"1", "/", "3"}], 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Cos", "[", 
+             RowBox[{"Pi", "  ", 
+              RowBox[{"#", "/", "3"}]}], "]"}], ",", 
+            RowBox[{"Sin", "[", 
+             RowBox[{"Pi", "  ", 
+              RowBox[{"#", "/", "3"}]}], "]"}]}], "}"}]}], "&"}], "/@", 
+        RowBox[{"Range", "[", "3", "]"}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"generators", " ", "=", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Join", "[", 
+          RowBox[{"#", ",", 
+           RowBox[{"-", "#"}]}], "]"}], "&"}], "/@", 
+        RowBox[{"{", 
+         RowBox[{"u4", ",", "u6", ",", "u8", ",", "u10"}], "}"}]}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"lattice", "[", 
+        RowBox[{"generators_List", ",", " ", "n_Integer"}], "]"}], ":=", 
+       RowBox[{"Union", "[", 
+        RowBox[{
+         RowBox[{"Expand", "@", "Total"}], "/@", 
+         RowBox[{"Join", "@@", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Tuples", "[", 
+              RowBox[{"generators", ",", "#"}], "]"}], "&"}], "/@", 
+            RowBox[{"Range", "[", "n", "]"}]}], ")"}]}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"latticeWindow", "[", 
+        RowBox[{
+        "generators_List", ",", " ", "n_Integer", ",", "select_List", ",", 
+         "window_List", ",", "windowR_"}], "]"}], ":=", 
+       RowBox[{"Union", "@", 
+        RowBox[{"Expand", "@", 
+         RowBox[{"Union", "@", 
+          RowBox[{
+           RowBox[{"Select", "[", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"Total", "/@", 
+              RowBox[{"Join", "@@", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"Tuples", "[", 
+                   RowBox[{"generators", ",", "#"}], "]"}], "&"}], "/@", 
+                 RowBox[{"Range", "[", "n", "]"}]}], ")"}]}]}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"Norm", "@", 
+                RowBox[{"N", "@", 
+                 RowBox[{"#", "[", 
+                  RowBox[{"[", "window", "]"}], "]"}]}]}], "<", "windowR"}], 
+              "&"}]}], "\[IndentingNewLine]", "]"}], "[", 
+           RowBox[{"[", 
+            RowBox[{"All", ",", "select"}], "]"}], "]"}]}]}]}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{
+       "pinwheel", " ", "adapted", " ", "from", " ", "demonstration", " ", 
+        "by", " ", "Ed", " ", "Pegg", " ", 
+        RowBox[{"Jr", "."}]}], " ", "*)"}], 
+      RowBox[{"initialshape", "=", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"2", "ss"}], ",", "ss"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"-", "2"}], "ss"}], ",", 
+              RowBox[{"-", "ss"}]}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"2", "ss"}], ",", 
+              RowBox[{"-", "ss"}]}], "}"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"-", "2"}], "ss"}], ",", 
+              RowBox[{"-", "ss"}]}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"2", "ss"}], ",", "ss"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"-", "2"}], "ss"}], ",", "ss"}], "}"}]}], "}"}]}], 
+         "}"}], "/.", 
+        RowBox[{"ss", "\[Rule]", "12"}]}]}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Recurse", "[", 
+        RowBox[{"{", 
+         RowBox[{"a_", ",", "b_", ",", "c_"}], "}"}], "]"}], ":=", 
+       RowBox[{"With", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"d", "=", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"4", " ", "a"}], "+", "b"}], ")"}], "/", "5"}]}], "}"}],
+          ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"a", ",", "c", ",", "d"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"d", ",", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"b", "+", "c"}], ")"}], "/", "2"}], ",", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"c", "+", "d"}], ")"}], "/", "2"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"b", "+", "c"}], ")"}], "/", "2"}], ",", "d", ",", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"b", "+", "d"}], ")"}], "/", "2"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"c", ",", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"b", "+", "c"}], ")"}], "/", "2"}], ",", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"c", "+", "d"}], ")"}], "/", "2"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"b", "+", "c"}], ")"}], "/", "2"}], ",", "b", ",", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"b", "+", "d"}], ")"}], "/", "2"}]}], "}"}]}], "}"}]}],
+         "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"pinwheelPts", " ", "=", " ", 
+       RowBox[{"Select", "[", 
+        RowBox[{
+         RowBox[{"Union", "@", 
+          RowBox[{"Flatten", "[", 
+           RowBox[{
+            RowBox[{"Nest", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"Recurse", "/@", 
+                RowBox[{"Flatten", "[", 
+                 RowBox[{"#", ",", "1"}], "]"}]}], "&"}], ",", 
+              RowBox[{"{", "initialshape", "}"}], ",", "5"}], "]"}], ",", 
+            "2"}], "]"}]}], ",", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Norm", "[", "#", "]"}], "<", "12"}], "&"}]}], "]"}]}], 
+      ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"pts", " ", "=", " ", 
+       RowBox[{"{", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"lattice", "[", 
+          RowBox[{
+           RowBox[{"generators", "[", 
+            RowBox[{"[", "1", "]"}], "]"}], " ", ",", "6"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"lattice", "[", 
+          RowBox[{
+           RowBox[{"generators", "[", 
+            RowBox[{"[", "2", "]"}], "]"}], " ", ",", "6"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"latticeWindow", "[", 
+          RowBox[{
+           RowBox[{"generators", "[", 
+            RowBox[{"[", "3", "]"}], "]"}], ",", "3", ",", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", "2"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"3", ",", "4"}], "}"}], ",", "3"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"latticeWindow", "[", 
+          RowBox[{
+           RowBox[{"generators", "[", 
+            RowBox[{"[", "4", "]"}], "]"}], ",", "3", ",", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", "2"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"3", ",", "4"}], "}"}], ",", "1.5"}], "]"}], ",", 
+         "\[IndentingNewLine]", "pinwheelPts"}], "\[IndentingNewLine]", 
+        "}"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Slit", "[", 
+        RowBox[{
+        "number_", ",", "h_", ",", "w_", ",", "s_", ",", "waveLength_", ",", 
+         "n_"}], "]"}], ":=", 
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"height", "=", " ", 
+            RowBox[{"Floor", "[", 
+             RowBox[{"h", " ", 
+              RowBox[{
+               RowBox[{"2", "^", 
+                RowBox[{"(", "6", ")"}]}], "/", "waveLength"}]}], "]"}]}], 
+           ",", "\[IndentingNewLine]", 
+           RowBox[{"width", "=", " ", 
+            RowBox[{"Floor", "[", 
+             RowBox[{"w", " ", 
+              RowBox[{
+               RowBox[{"2", "^", 
+                RowBox[{"(", "6", ")"}]}], "/", "waveLength"}]}], "]"}]}], 
+           ",", "\[IndentingNewLine]", 
+           RowBox[{"spacing", " ", "=", " ", 
+            RowBox[{"Floor", "[", 
+             RowBox[{"s", " ", 
+              RowBox[{
+               RowBox[{"2", "^", 
+                RowBox[{"(", "6", ")"}]}], "/", "waveLength"}]}], "]"}]}], 
+           ",", "\[IndentingNewLine]", "xStart", ",", "\[IndentingNewLine]", 
+           "yStart", ",", "\[IndentingNewLine]", "slitRow", ",", 
+           "\[IndentingNewLine]", "\[Rho]"}], "\[IndentingNewLine]", "}"}], 
+         ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"xStart", " ", "=", " ", 
+           RowBox[{"Floor", "[", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"2", "^", 
+                RowBox[{"(", 
+                 RowBox[{"n", "+", "1"}], ")"}]}], "-", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{"number", "-", "1"}], ")"}], "*", "spacing"}], "-", 
+               RowBox[{"number", "*", "width"}]}], ")"}], "/", "2"}], "]"}]}],
+           ";", "\[IndentingNewLine]", 
+          RowBox[{"yStart", " ", "=", " ", 
+           RowBox[{"Floor", "[", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"2", "^", 
+                RowBox[{"(", 
+                 RowBox[{"n", "+", "1"}], ")"}]}], "-", "height"}], ")"}], 
+             "/", "2"}], "]"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{"xStart", ",", "yStart"}], "}"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"slitRow", " ", "=", " ", 
+           RowBox[{"PadRight", "[", 
+            RowBox[{
+             RowBox[{"Flatten", "[", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"Table", "[", 
+                 RowBox[{"0", ",", 
+                  RowBox[{"{", "xStart", "}"}]}], "]"}], ",", 
+                "\[IndentingNewLine]", 
+                RowBox[{"Table", "[", 
+                 RowBox[{
+                  RowBox[{"{", "\[IndentingNewLine]", 
+                   RowBox[{
+                    RowBox[{"Table", "[", 
+                    RowBox[{"1", ",", 
+                    RowBox[{"{", "width", "}"}]}], "]"}], ",", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"Table", "[", 
+                    RowBox[{"0", ",", 
+                    RowBox[{"{", "spacing", "}"}]}], "]"}]}], 
+                   "\[IndentingNewLine]", "}"}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{"number", "-", "1"}], "}"}]}], "]"}], ",", 
+                "\[IndentingNewLine]", 
+                RowBox[{"Table", "[", 
+                 RowBox[{"1", ",", 
+                  RowBox[{"{", "width", "}"}]}], "]"}]}], " ", "}"}], "]"}], 
+             ",", "\[IndentingNewLine]", 
+             RowBox[{"2", "^", 
+              RowBox[{"(", 
+               RowBox[{"n", "+", "1"}], ")"}]}]}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"\[Rho]", "=", 
+           RowBox[{"Join", "[", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"Table", "[", 
+              RowBox[{
+               RowBox[{"Table", "[", 
+                RowBox[{"0", ",", 
+                 RowBox[{"{", 
+                  RowBox[{"2", "^", 
+                   RowBox[{"(", 
+                    RowBox[{"n", "+", "1"}], ")"}]}], "}"}]}], "]"}], ",", 
+               RowBox[{"{", "yStart", "}"}]}], "]"}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{"Table", "[", 
+              RowBox[{"slitRow", ",", 
+               RowBox[{"{", "height", "}"}]}], "]"}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{"Table", "[", 
+              RowBox[{
+               RowBox[{"Table", "[", 
+                RowBox[{"0", ",", 
+                 RowBox[{"{", 
+                  RowBox[{"2", "^", 
+                   RowBox[{"(", 
+                    RowBox[{"n", "+", "1"}], ")"}]}], "}"}]}], "]"}], ",", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"2", "^", 
+                  RowBox[{"(", 
+                   RowBox[{"n", "+", "1"}], ")"}]}], "-", "height", "-", 
+                 "yStart"}], "}"}]}], "]"}]}], "\[IndentingNewLine]", "]"}]}],
+           ";", "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"yStart", ">", "0"}], ",", "\[IndentingNewLine]", 
+            "\[Rho]", ",", "\[IndentingNewLine]", 
+            RowBox[{"Table", "[", 
+             RowBox[{"slitRow", ",", 
+              RowBox[{"{", 
+               RowBox[{"2", "^", 
+                RowBox[{"(", 
+                 RowBox[{"n", "+", "1"}], ")"}]}], "}"}]}], "]"}]}], 
+           "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
+      ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"space", "[", 
+        RowBox[{"pts_List", ",", "l_", ",", "n_Integer"}], "]"}], ":=", 
+       RowBox[{"BinCounts", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"N", "@", "pts"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "l"}], ",", "l", ",", 
+           RowBox[{"l", "/", 
+            RowBox[{"2", "^", 
+             RowBox[{"(", "n", ")"}]}]}]}], "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "l"}], ",", "l", ",", 
+           RowBox[{"l", "/", 
+            RowBox[{"2", "^", 
+             RowBox[{"(", "n", ")"}]}]}]}], "}"}]}], "\[IndentingNewLine]", 
+        "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Intensity", "[", 
+        RowBox[{"space_List", ",", "n_Integer"}], "]"}], ":=", 
+       RowBox[{"With", "[", 
+        RowBox[{
+         RowBox[{"{", "\[IndentingNewLine]", 
+          RowBox[{"inverseSpace", " ", "=", " ", 
+           RowBox[{"Fourier", "[", 
+            RowBox[{
+             RowBox[{"phi", "[", 
+              RowBox[{"n", "+", "1"}], "]"}], "space"}], "]"}]}], "}"}], ",", 
+         " ", 
+         RowBox[{"Part", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"Chop", "[", 
+            RowBox[{
+             RowBox[{"Conjugate", "[", "inverseSpace", "]"}], 
+             "inverseSpace"}], "]"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"Range", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"2", "^", 
+               RowBox[{"(", 
+                RowBox[{"n", "-", "1"}], ")"}]}], "+", "1"}], ",", 
+             RowBox[{
+              RowBox[{"2", "^", 
+               RowBox[{"(", 
+                RowBox[{"n", "-", "1"}], ")"}]}], "+", 
+              RowBox[{"2", "^", "n"}]}]}], "]"}], ",", 
+           RowBox[{"Range", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"2", "^", 
+               RowBox[{"(", 
+                RowBox[{"n", "-", "1"}], ")"}]}], "+", "1"}], ",", 
+             RowBox[{
+              RowBox[{"2", "^", 
+               RowBox[{"(", 
+                RowBox[{"n", "-", "1"}], ")"}]}], "+", 
+              RowBox[{"2", "^", "n"}]}]}], "]"}]}], "\[IndentingNewLine]", 
+          "]"}]}], "\[IndentingNewLine]", "]"}]}], ";", "\[IndentingNewLine]",
+       "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"phi", "[", "n_", "]"}], ":=", 
+       RowBox[{"With", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"a", "=", 
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"EvenQ", "[", "i", "]"}], ",", "1", ",", 
+               RowBox[{"-", "1"}]}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"i", ",", "1", ",", 
+               RowBox[{"2", "^", "n"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Outer", "[", 
+          RowBox[{"Times", ",", "a", ",", "a", ",", "1"}], "]"}]}], 
+        "\[IndentingNewLine]", "]"}]}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"im", "=", "410"}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"M", "[", 
+        RowBox[{
+        "measurement_", ",", "\[Rho]_", ",", "resolution_Integer", ",", 
+         "metric_", ",", "number_", ",", "height_", ",", "width_", ",", 
+         "spacing_"}], "]"}], ":=", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"\[Rho]", "\[Equal]", "0"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"S", "[", 
+          RowBox[{
+          "measurement", ",", "number", ",", "height", ",", "width", ",", 
+           "spacing", ",", "metric", ",", "resolution"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Crystal", "[", 
+          RowBox[{
+          "measurement", ",", "\[Rho]", ",", "metric", ",", "resolution"}], 
+          "]"}]}], "\[IndentingNewLine]", "]"}]}], ";", "\[IndentingNewLine]",
+       "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"S", "[", 
+        RowBox[{
+        "measurement_", ",", "number_", ",", "height_", ",", "width_", ",", 
+         "spacing_", ",", "metric_", ",", "resolution_Integer"}], "]"}], ":=", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"SameQ", "[", 
+          RowBox[{"measurement", ",", "Reverse"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Column", "[", 
+          RowBox[{
+           RowBox[{"{", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"ArrayPlot", "[", 
+                RowBox[{
+                 RowBox[{"#", "/.", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"0", "\[Rule]", "1"}], ",", 
+                    RowBox[{"1", "\[Rule]", "0"}]}], "}"}]}], ",", 
+                 RowBox[{"ImageSize", "\[Rule]", 
+                  RowBox[{"{", 
+                   RowBox[{"im", ",", "im"}], "}"}]}]}], "]"}], "&"}], "@", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Slit", "[", 
+               RowBox[{
+               "number", ",", "height", ",", "width", ",", "spacing", ",", 
+                "metric", ",", "9"}], "]"}]}], ",", "\[IndentingNewLine]", 
+             RowBox[{"DensityScale", "[", 
+              RowBox[{"0", ",", "1"}], "]"}]}], "\[IndentingNewLine]", "}"}], 
+           ",", "Center"}], "]"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"DiffractionPattern", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"Intensity", "[", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"Slit", "[", 
+              RowBox[{
+              "number", ",", "height", ",", "width", ",", "spacing", ",", 
+               "metric", ",", "resolution"}], "]"}], ",", 
+             "\[IndentingNewLine]", "resolution"}], "]"}], ",", 
+           "\[IndentingNewLine]", "measurement"}], "]"}]}], 
+        "\[IndentingNewLine]", "]"}]}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Crystal", "[", 
+        RowBox[{
+        "measurement_", ",", "\[Rho]_", ",", "metric_", ",", 
+         "resolution_Integer"}], "]"}], ":=", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"SameQ", "[", 
+          RowBox[{"measurement", ",", "Reverse"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Column", "[", 
+          RowBox[{
+           RowBox[{"{", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"Graphics", "[", 
+              RowBox[{
+               RowBox[{"Point", "/@", 
+                RowBox[{"pts", "[", 
+                 RowBox[{"[", "\[Rho]", "]"}], "]"}]}], ",", 
+               "\[IndentingNewLine]", 
+               RowBox[{"PlotRange", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"-", "metric"}], ",", "metric"}], "}"}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"-", "metric"}], ",", "metric"}], "}"}]}], 
+                 "}"}]}], ",", "\[IndentingNewLine]", 
+               RowBox[{"ImageSize", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{"im", ",", "im"}], "}"}]}], ",", 
+               RowBox[{"ImagePadding", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{"Automatic", ",", "Automatic"}], "}"}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{"Automatic", ",", "5"}], "}"}]}], "}"}]}]}], "]"}],
+              ",", "\[IndentingNewLine]", 
+             RowBox[{"DensityScale", "[", 
+              RowBox[{"0", ",", "1"}], "]"}]}], "\[IndentingNewLine]", "}"}], 
+           ",", "Center"}], "]"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"DiffractionPattern", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"Intensity", "[", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"space", "[", 
+              RowBox[{
+               RowBox[{"pts", "[", 
+                RowBox[{"[", "\[Rho]", "]"}], "]"}], ",", 
+               "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"1", "/", 
+                 RowBox[{"2", "^", 
+                  RowBox[{"(", 
+                   RowBox[{"9", "-", "resolution"}], ")"}]}]}], "metric"}], 
+               ",", "\[IndentingNewLine]", "resolution"}], "]"}], ",", 
+             "\[IndentingNewLine]", "resolution"}], "]"}], ",", 
+           "\[IndentingNewLine]", "measurement"}], "\[IndentingNewLine]", 
+          "]"}]}], "\[IndentingNewLine]", "]"}]}], ";", "\[IndentingNewLine]",
+       "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"DiffractionPattern", "[", 
+        RowBox[{"intensity_List", ",", "measurement_"}], "]"}], ":=", 
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"flat", "=", 
+            RowBox[{"Flatten", "@", "intensity"}]}], ",", "max", ",", "min", 
+           ",", "scaledMax", ",", "inverse"}], "}"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"max", " ", "=", " ", 
+           RowBox[{"Max", "[", "flat", "]"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"min", "=", 
+           RowBox[{"Min", "[", "flat", "]"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"scaledMax", " ", "=", 
+           RowBox[{"measurement", "@", "max"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"inverse", " ", "=", 
+           RowBox[{"Map", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"scaledMax", "-", "#"}], "&"}], ",", 
+             RowBox[{"measurement", "@", "intensity"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"-", "1"}], "}"}]}], "]"}]}], ";", " ", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Column", "[", 
+           RowBox[{
+            RowBox[{"{", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"ArrayPlot", "[", 
+               RowBox[{"inverse", ",", 
+                RowBox[{"ImagePadding", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"{", 
+                    RowBox[{"Automatic", ",", "Automatic"}], "}"}], ",", 
+                   RowBox[{"{", 
+                    RowBox[{"Automatic", ",", "5"}], "}"}]}], "}"}]}], ",", 
+                RowBox[{"ImageSize", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"im", ",", "im"}], "}"}]}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"IntensityScale", "[", 
+               RowBox[{
+               "\"\<0\>\"", ",", "\"\<1\>\"", ",", "min", ",", "max", ",", 
+                "measurement"}], "]"}]}], "\[IndentingNewLine]", "}"}], ",", 
+            "Center"}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"DensityScale", "[", 
+        RowBox[{"a_", ",", "b_"}], "]"}], ":=", 
+       RowBox[{"Text", "@", 
+        RowBox[{"Row", "[", 
+         RowBox[{"{", "\[IndentingNewLine]", 
+          RowBox[{
+           SubscriptBox["\"\<\[Rho]\>\"", 
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<xy\>\"", ",", "Italic"}], "]"}]], ",", 
+           "\"\< / \>\"", ",", 
+           SubscriptBox["\"\<\[Rho]\>\"", "\"\<00\>\""], ",", "\"\<    \>\"", 
+           ",", "\[IndentingNewLine]", 
+           RowBox[{"ArrayPlot", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"{", "0", "}"}], "}"}], ",", 
+             RowBox[{"ImageSize", "\[Rule]", 
+              RowBox[{"{", 
+               RowBox[{"20", ",", "20"}], "}"}]}], ",", 
+             RowBox[{"Frame", "\[Rule]", "True"}]}], "]"}], ",", ",", 
+           "\"\< \>\"", ",", "a", ",", "\[IndentingNewLine]", 
+           "\"\<      \>\"", ",", "\[IndentingNewLine]", 
+           RowBox[{"ArrayPlot", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"{", "1", "}"}], "}"}], ",", 
+             RowBox[{"ImageSize", "\[Rule]", 
+              RowBox[{"{", 
+               RowBox[{"20", ",", "20"}], "}"}]}], ",", 
+             RowBox[{"Frame", "\[Rule]", "True"}]}], "]"}], ",", "\"\< \>\"", 
+           ",", "b"}], "\[IndentingNewLine]", "}"}], "]"}]}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"IntensityScale", "[", 
+        RowBox[{"a_", ",", "b_", ",", "min_", ",", "max_", ",", "function_"}],
+         "]"}], " ", ":=", 
+       RowBox[{"Text", "@", " ", 
+        RowBox[{"Row", "[", "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{"\"\<|\>\"", ",", 
+           RowBox[{"Style", "[", 
+            RowBox[{
+            "\"\<\!\(\*SubscriptBox[\(E\), \(xy\)]\)\>\"", ",", "Italic"}], 
+            "]"}], ",", "\"\<\!\(\*SuperscriptBox[\(|\), \(2\)]\) / |\>\"", 
+           ",", 
+           SubscriptBox[
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<E\>\"", ",", "Italic"}], "]"}], "\"\<00\>\""], ",", 
+           "\"\<\!\(\*SuperscriptBox[\(|\), \(2\)]\)\>\"", ",", 
+           "\"\<    \>\"", ",", "0", ",", "\[IndentingNewLine]", 
+           RowBox[{"ArrayPlot", "[", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"Table", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{"function", "[", 
+                  RowBox[{"{", "max", "}"}], "]"}], "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], "-", 
+                RowBox[{"function", "[", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"Range", "[", 
+                    RowBox[{"0", ",", "20"}], "]"}], "/", "20"}], "max"}], 
+                 "]"}]}], ",", 
+               RowBox[{"{", "1", "}"}]}], "]"}], ",", "\[IndentingNewLine]", 
+             RowBox[{"Mesh", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
+             RowBox[{"Frame", "\[Rule]", "False"}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{"ImageSize", "\[Rule]", " ", 
+              RowBox[{"{", 
+               RowBox[{"200", ",", "30"}], "}"}]}]}], "]"}], ",", 
+           "\[IndentingNewLine]", "1"}], "}"}], "]"}]}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"SqrtSqrt", "[", "x_", "]"}], ":=", 
+       RowBox[{"Sqrt", "[", 
+        RowBox[{"Sqrt", "[", "x", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"symmetryIcon", "[", "n_", "]"}], ":=", 
+       RowBox[{"Graphics", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"Opacity", "[", "0", "]"}], ",", 
+           RowBox[{"EdgeForm", "[", "Thick", "]"}], ",", 
+           RowBox[{"Polygon", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"Cos", "[", 
+                 RowBox[{"2", 
+                  RowBox[{"Pi", "/", "n"}], "#"}], "]"}], ",", 
+                RowBox[{"Sin", "[", 
+                 RowBox[{"2", 
+                  RowBox[{"Pi", "/", "n"}], "#"}], "]"}]}], "}"}], "&"}], "/@", 
+             RowBox[{"Range", "[", "n", "]"}]}], "]"}]}], "}"}], ",", 
+         RowBox[{"ImageSize", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"20", ",", "20"}], "}"}]}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"forbiddenSymmetryIcon", "[", "n_Integer", "]"}], ":=", 
+       RowBox[{"Graphics", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"Opacity", "[", "0", "]"}], ",", 
+           RowBox[{"EdgeForm", "[", "Thick", "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"Polygon", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"Cos", "[", 
+                 RowBox[{"2", 
+                  RowBox[{"Pi", "/", "n"}], "#"}], "]"}], ",", 
+                RowBox[{"Sin", "[", 
+                 RowBox[{"2", 
+                  RowBox[{"Pi", "/", "n"}], "#"}], "]"}]}], "}"}], " ", "&"}],
+              "/@", 
+             RowBox[{"Range", "[", "n", "]"}]}], "]"}], ",", 
+           "\[IndentingNewLine]", " ", 
+           RowBox[{"Polygon", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"Cos", "[", 
+                 RowBox[{
+                  RowBox[{"2", 
+                   RowBox[{"Pi", "/", "n"}], "#"}], "+", 
+                  RowBox[{"Pi", "/", "n"}]}], "]"}], ",", 
+                RowBox[{"Sin", "[", 
+                 RowBox[{
+                  RowBox[{"2", 
+                   RowBox[{"Pi", "/", "n"}], "#"}], "+", 
+                  RowBox[{"Pi", "/", "n"}]}], "]"}]}], "}"}], " ", "&"}], "/@", 
+             RowBox[{"Range", "[", "n", "]"}]}], "]"}]}], " ", "}"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"ImageSize", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"20", ",", "20"}], "}"}]}]}], "]"}]}]}], 
+     "\[IndentingNewLine]", ")"}]}]}], "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.547852409006854*^9, 3.5478524180329933`*^9}, {
+   3.547852539459304*^9, 3.5478525408036833`*^9}, {3.547852598082551*^9, 
+   3.547852638011154*^9}, {3.54785278228296*^9, 3.547853002033057*^9}, {
+   3.547853036608055*^9, 3.547853057515417*^9}, {3.547853113007072*^9, 
+   3.547853214599175*^9}, {3.547853361046391*^9, 3.547853425934657*^9}, {
+   3.5478535251670437`*^9, 3.547853555419024*^9}, {3.5478547736171103`*^9, 
+   3.547854782836998*^9}, {3.547856027984483*^9, 3.547856123769937*^9}, {
+   3.547859217511409*^9, 3.547859224934289*^9}, {3.547914343683194*^9, 
+   3.547914348964964*^9}, {3.547914592792212*^9, 3.547914644490426*^9}, 
+   3.547915058911828*^9, {3.547915173591825*^9, 3.547915221327058*^9}, {
+   3.547915264644*^9, 3.547915364639812*^9}, {3.547915405064986*^9, 
+   3.547915422475267*^9}, {3.547915459810729*^9, 3.547915683064682*^9}, {
+   3.547915718884863*^9, 3.5479157190065203`*^9}, {3.5479157773478727`*^9, 
+   3.547915803912376*^9}, {3.547915871499175*^9, 3.547915879854198*^9}, {
+   3.547915968203341*^9, 3.547915983838212*^9}, {3.547916228494235*^9, 
+   3.54791622972507*^9}, {3.547916497886427*^9, 3.547916500370442*^9}, {
+   3.547916533207419*^9, 3.547916534189014*^9}, 3.5479167464252453`*^9, {
+   3.5479188392595387`*^9, 3.547918869963903*^9}, {3.5479189311839437`*^9, 
+   3.547918937006181*^9}, {3.547918998647902*^9, 3.54791899950146*^9}, {
+   3.547919114804214*^9, 3.547919126261795*^9}, {3.547919303578703*^9, 
+   3.547919326584407*^9}, {3.54791954518645*^9, 3.54791954715414*^9}, 
+   3.5479204432131433`*^9, {3.547920496693871*^9, 3.547920502343264*^9}, {
+   3.547920666262938*^9, 3.5479206681851892`*^9}, {3.547922505251143*^9, 
+   3.54792253890623*^9}, {3.547922574711307*^9, 3.547922655119185*^9}, {
+   3.547922706021538*^9, 3.547922706299088*^9}, {3.547923440116091*^9, 
+   3.5479234490130253`*^9}, {3.5479251658804073`*^9, 3.547925169435903*^9}, {
+   3.547926909641892*^9, 3.547926910286441*^9}, {3.5479269590567913`*^9, 
+   3.547926982326888*^9}, {3.54794061182798*^9, 3.5479406119559937`*^9}, {
+   3.54795637307738*^9, 3.547956374796315*^9}, {3.5479599195450172`*^9, 
+   3.5479599424638042`*^9}, {3.5479599775107203`*^9, 3.547959996199337*^9}, {
+   3.5479601420912857`*^9, 3.547960151489463*^9}, {3.5479604638177443`*^9, 
+   3.547960464482893*^9}, {3.54796120506461*^9, 3.547961209928893*^9}, {
+   3.54796146762213*^9, 3.547961474887271*^9}, {3.548003650540318*^9, 
+   3.548003668688953*^9}, {3.548004490802466*^9, 3.548004502507058*^9}, {
+   3.548005751420958*^9, 3.548005917402862*^9}, {3.5480059716152353`*^9, 
+   3.548006008445553*^9}, {3.548006055319386*^9, 3.548006080924004*^9}, {
+   3.548006213359644*^9, 3.548006223197711*^9}, {3.548006317734576*^9, 
+   3.54800632197167*^9}, {3.5480073440091267`*^9, 3.5480073453986273`*^9}, {
+   3.548007626769508*^9, 3.548007745284821*^9}, {3.548007788003187*^9, 
+   3.548007812088841*^9}, {3.548007891911425*^9, 3.54800790457331*^9}, {
+   3.548008062353518*^9, 3.548008098075206*^9}, {3.548008180985731*^9, 
+   3.548008184781767*^9}, {3.5480082636015778`*^9, 3.5480082793964863`*^9}, {
+   3.548008320758163*^9, 3.5480083218593693`*^9}, 3.548008365845871*^9, {
+   3.548008471814905*^9, 3.548008475444456*^9}, {3.548009488786127*^9, 
+   3.5480094897762623`*^9}, {3.548012644128708*^9, 3.548012653582014*^9}, {
+   3.548012804276347*^9, 3.548012825122342*^9}, {3.548020397524246*^9, 
+   3.548020430013389*^9}, 3.548021668708932*^9, {3.548021721587275*^9, 
+   3.548021722934037*^9}, {3.5480227142279177`*^9, 3.5480227387066507`*^9}, {
+   3.54802285722016*^9, 3.548022934152269*^9}, {3.5480819593634667`*^9, 
+   3.5480821011326427`*^9}, {3.548082167003229*^9, 3.5480821781503434`*^9}, {
+   3.548101213531842*^9, 3.548101218077187*^9}, {3.548101248097392*^9, 
+   3.548101329094179*^9}, {3.5481013715126*^9, 3.54810137482413*^9}, {
+   3.5485886220867395`*^9, 3.5485886244423847`*^9}, {3.548618714088545*^9, 
+   3.548618741563778*^9}, {3.548618868083394*^9, 3.548618995071106*^9}, {
+   3.548619096435587*^9, 3.5486190972928467`*^9}, {3.548619136711505*^9, 
+   3.5486191372754793`*^9}, {3.548619176953142*^9, 3.548619184334497*^9}, {
+   3.5486192234891768`*^9, 3.5486192749566717`*^9}, {3.548619341165402*^9, 
+   3.548619368462545*^9}, {3.548619460872903*^9, 3.548619463444001*^9}, {
+   3.54861949763055*^9, 3.548619518378561*^9}, {3.548619573340225*^9, 
+   3.548619663101459*^9}, {3.548620057138123*^9, 3.548620080134925*^9}, {
+   3.5486201254278812`*^9, 3.548620126689398*^9}, {3.548620226149146*^9, 
+   3.548620235609036*^9}, {3.5486202880519342`*^9, 3.548620301989683*^9}, {
+   3.548620417119959*^9, 3.548620477701269*^9}, {3.548620532505334*^9, 
+   3.54862054090156*^9}, {3.54862068771238*^9, 3.548620690658251*^9}, {
+   3.548620755320189*^9, 3.548620833144858*^9}, {3.5486209155959253`*^9, 
+   3.5486210150188637`*^9}, {3.54862105911791*^9, 3.548621131208045*^9}, {
+   3.548621186907979*^9, 3.548621235515485*^9}, {3.548621316217342*^9, 
+   3.548621395355431*^9}, {3.5486215525987587`*^9, 3.5486215695698137`*^9}, {
+   3.548621743483905*^9, 3.548621749761015*^9}, {3.548633359355364*^9, 
+   3.5486333645111933`*^9}, {3.548633681178875*^9, 3.548633687900276*^9}, {
+   3.548633731560995*^9, 3.548633764332161*^9}, {3.548633901781736*^9, 
+   3.5486339105588818`*^9}, {3.548696873834765*^9, 3.548696874360279*^9}},
+ CellLabel->"In[5]:=",
+ CellID->1301673421,ExpressionUUID->"47dd9b95-b4c4-4ff7-a2eb-596a40a16d35"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`height$$ = 4, $CellContext`measurement$$ = 
+    Reverse, $CellContext`n$$ = 2, $CellContext`resolution$$ = 
+    9, $CellContext`scale$$ = 7., $CellContext`spacing$$ = 
+    2, $CellContext`width$$ = 1, $CellContext`\[Rho]$$ = 1, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold["display function"], Manipulate`Dump`ThisIsNotAControl}, {{
+       Hold[$CellContext`measurement$$], Identity, 
+       ""}, {$CellContext`SqrtSqrt -> 
+       "|\!\(\*SubscriptBox[\(E\), \(xy\)]\)\!\(\*SuperscriptBox[\(|\), \(1/2\
+\)]\)", Sqrt -> "|\!\(\*SubscriptBox[\(E\), \(xy\)]\)|"^Invisible[2], 
+       Identity -> 
+       "|\!\(\*SubscriptBox[\(E\), \(xy\)]\)\!\(\*SuperscriptBox[\(|\), \
+\(2\)]\)", Reverse -> "\!\(\*SubscriptBox[\(\[Rho]\), \(xy\)]\)"}}, {
+      Hold[""], Manipulate`Dump`ThisIsNotAControl}, {
+      Hold["cause of diffraction"], Manipulate`Dump`ThisIsNotAControl}, {{
+       Hold[$CellContext`\[Rho]$$], 3, ""}, {1 -> Graphics[{
+          Opacity[0], 
+          EdgeForm[
+           Thickness[Large]], 
+          Polygon[{{0, 1}, {-1, 0}, {0, -1}, {1, 0}}]}, 
+         ImageSize -> {20, 20}], 2 -> Graphics[{
+          Opacity[0], 
+          EdgeForm[
+           Thickness[Large]], 
+          Polygon[{{
+             Rational[1, 2], Rational[1, 2] 3^Rational[1, 2]}, {
+             Rational[-1, 2], Rational[1, 2] 3^Rational[1, 2]}, {-1, 0}, {
+             Rational[-1, 2], Rational[-1, 2] 3^Rational[1, 2]}, {
+             Rational[1, 2], Rational[-1, 2] 3^Rational[1, 2]}, {1, 0}}]}, 
+         ImageSize -> {20, 20}], 3 -> Graphics[{
+          Opacity[0], 
+          EdgeForm[
+           Thickness[Large]], 
+          Polygon[{{0, 1}, {-1, 0}, {0, -1}, {1, 0}}], 
+          
+          Polygon[{{-2^Rational[-1, 2], 2^
+             Rational[-1, 2]}, {-2^Rational[-1, 2], -2^Rational[-1, 2]}, {
+            2^Rational[-1, 2], -2^Rational[-1, 2]}, {
+            2^Rational[-1, 2], 2^Rational[-1, 2]}}]}, ImageSize -> {20, 20}], 
+       4 -> Graphics[{
+          Opacity[0], 
+          EdgeForm[
+           Thickness[Large]], 
+          
+          Polygon[{{
+            Rational[1, 4] (-1 + 5^Rational[1, 2]), (Rational[5, 8] + 
+              Rational[1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {
+            Rational[1, 4] (-1 - 5^Rational[1, 2]), (Rational[5, 8] + 
+              Rational[-1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {
+            Rational[1, 4] (-1 - 5^
+              Rational[1, 2]), -(Rational[5, 8] + 
+               Rational[-1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {
+            Rational[1, 4] (-1 + 
+              5^Rational[1, 2]), -(Rational[5, 8] + 
+               Rational[1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {1, 0}}], 
+          
+          Polygon[{{
+            Rational[1, 4] (1 - 5^Rational[1, 2]), (Rational[5, 8] + 
+              Rational[1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {-1, 0}, {
+            Rational[1, 4] (1 - 5^
+              Rational[1, 2]), -(Rational[5, 8] + 
+               Rational[1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {
+            Rational[1, 4] (1 + 
+              5^Rational[1, 2]), -(Rational[5, 8] + 
+               Rational[-1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {
+            Rational[1, 4] (1 + 5^Rational[1, 2]), (Rational[5, 8] + 
+              Rational[-1, 8] 5^Rational[1, 2])^Rational[1, 2]}}]}, 
+         ImageSize -> {20, 20}], 0 -> " I I ", 5 -> Graphics[{
+          Opacity[0], 
+          EdgeForm[
+           Thickness[Large]], 
+          Polygon[{{
+             Cos[Rational[1, 50] Pi], 
+             Sin[Rational[1, 50] Pi]}, {
+             Cos[Rational[1, 25] Pi], 
+             Sin[Rational[1, 25] Pi]}, {
+             Cos[Rational[3, 50] Pi], 
+             Sin[Rational[3, 50] Pi]}, {
+             Cos[Rational[2, 25] Pi], 
+             Sin[
+             Rational[2, 25] Pi]}, {(Rational[5, 8] + 
+              Rational[1, 8] 5^Rational[1, 2])^Rational[1, 2], 
+             Rational[1, 4] (-1 + 5^Rational[1, 2])}, {
+             Cos[Rational[3, 25] Pi], 
+             Sin[Rational[3, 25] Pi]}, {
+             Cos[Rational[7, 50] Pi], 
+             Sin[Rational[7, 50] Pi]}, {
+             Cos[Rational[4, 25] Pi], 
+             Sin[Rational[4, 25] Pi]}, {
+             Cos[Rational[9, 50] Pi], 
+             Sin[Rational[9, 50] Pi]}, {
+            Rational[1, 4] (1 + 5^Rational[1, 2]), (Rational[5, 8] + 
+              Rational[-1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {
+             Cos[Rational[11, 50] Pi], 
+             Sin[Rational[11, 50] Pi]}, {
+             Cos[Rational[6, 25] Pi], 
+             Sin[Rational[6, 25] Pi]}, {
+             Sin[Rational[6, 25] Pi], 
+             Cos[Rational[6, 25] Pi]}, {
+             Sin[Rational[11, 50] Pi], 
+             Cos[
+             Rational[11, 50] Pi]}, {(Rational[5, 8] + 
+              Rational[-1, 8] 5^Rational[1, 2])^Rational[1, 2], 
+             Rational[1, 4] (1 + 5^Rational[1, 2])}, {
+             Sin[Rational[9, 50] Pi], 
+             Cos[Rational[9, 50] Pi]}, {
+             Sin[Rational[4, 25] Pi], 
+             Cos[Rational[4, 25] Pi]}, {
+             Sin[Rational[7, 50] Pi], 
+             Cos[Rational[7, 50] Pi]}, {
+             Sin[Rational[3, 25] Pi], 
+             Cos[Rational[3, 25] Pi]}, {
+            Rational[1, 4] (-1 + 5^Rational[1, 2]), (Rational[5, 8] + 
+              Rational[1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {
+             Sin[Rational[2, 25] Pi], 
+             Cos[Rational[2, 25] Pi]}, {
+             Sin[Rational[3, 50] Pi], 
+             Cos[Rational[3, 50] Pi]}, {
+             Sin[Rational[1, 25] Pi], 
+             Cos[Rational[1, 25] Pi]}, {
+             Sin[Rational[1, 50] Pi], 
+             Cos[Rational[1, 50] Pi]}, {0, 1}, {-Sin[Rational[1, 50] Pi], 
+             Cos[Rational[1, 50] Pi]}, {-Sin[Rational[1, 25] Pi], 
+             Cos[Rational[1, 25] Pi]}, {-Sin[Rational[3, 50] Pi], 
+             Cos[Rational[3, 50] Pi]}, {-Sin[Rational[2, 25] Pi], 
+             Cos[Rational[2, 25] Pi]}, {
+            Rational[1, 4] (1 - 5^Rational[1, 2]), (Rational[5, 8] + 
+              Rational[1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {-
+             Sin[Rational[3, 25] Pi], 
+             Cos[Rational[3, 25] Pi]}, {-Sin[Rational[7, 50] Pi], 
+             Cos[Rational[7, 50] Pi]}, {-Sin[Rational[4, 25] Pi], 
+             Cos[Rational[4, 25] Pi]}, {-Sin[Rational[9, 50] Pi], 
+             Cos[
+             Rational[9, 50] 
+              Pi]}, {-(Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+              Rational[1, 2], Rational[1, 4] (1 + 5^Rational[1, 2])}, {-
+             Sin[Rational[11, 50] Pi], 
+             Cos[Rational[11, 50] Pi]}, {-Sin[Rational[6, 25] Pi], 
+             Cos[Rational[6, 25] Pi]}, {-Cos[Rational[6, 25] Pi], 
+             Sin[Rational[6, 25] Pi]}, {-Cos[Rational[11, 50] Pi], 
+             Sin[Rational[11, 50] Pi]}, {
+            Rational[1, 4] (-1 - 5^Rational[1, 2]), (Rational[5, 8] + 
+              Rational[-1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {-
+             Cos[Rational[9, 50] Pi], 
+             Sin[Rational[9, 50] Pi]}, {-Cos[Rational[4, 25] Pi], 
+             Sin[Rational[4, 25] Pi]}, {-Cos[Rational[7, 50] Pi], 
+             Sin[Rational[7, 50] Pi]}, {-Cos[Rational[3, 25] Pi], 
+             Sin[
+             Rational[3, 25] 
+              Pi]}, {-(Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+              Rational[1, 2], Rational[1, 4] (-1 + 5^Rational[1, 2])}, {-
+             Cos[Rational[2, 25] Pi], 
+             Sin[Rational[2, 25] Pi]}, {-Cos[Rational[3, 50] Pi], 
+             Sin[Rational[3, 50] Pi]}, {-Cos[Rational[1, 25] Pi], 
+             Sin[Rational[1, 25] Pi]}, {-Cos[Rational[1, 50] Pi], 
+             Sin[Rational[1, 50] Pi]}, {-1, 
+            0}, {-Cos[Rational[1, 50] Pi], -Sin[Rational[1, 50] Pi]}, {-
+             Cos[Rational[1, 25] Pi], -Sin[Rational[1, 25] Pi]}, {-
+             Cos[Rational[3, 50] Pi], -Sin[Rational[3, 50] Pi]}, {-
+             Cos[Rational[2, 25] Pi], -
+             Sin[Rational[2, 25] Pi]}, {-(Rational[5, 8] + 
+               Rational[1, 8] 5^Rational[1, 2])^Rational[1, 2], 
+             Rational[1, 4] (1 - 5^Rational[1, 2])}, {-
+             Cos[Rational[3, 25] Pi], -Sin[Rational[3, 25] Pi]}, {-
+             Cos[Rational[7, 50] Pi], -Sin[Rational[7, 50] Pi]}, {-
+             Cos[Rational[4, 25] Pi], -Sin[Rational[4, 25] Pi]}, {-
+             Cos[Rational[9, 50] Pi], -Sin[Rational[9, 50] Pi]}, {
+            Rational[1, 4] (-1 - 5^
+              Rational[1, 2]), -(Rational[5, 8] + 
+               Rational[-1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {-
+             Cos[Rational[11, 50] Pi], -Sin[Rational[11, 50] Pi]}, {-
+             Cos[Rational[6, 25] Pi], -Sin[Rational[6, 25] Pi]}, {-
+             Sin[Rational[6, 25] Pi], -Cos[Rational[6, 25] Pi]}, {-
+             Sin[Rational[11, 50] Pi], -
+             Cos[Rational[11, 50] Pi]}, {-(Rational[5, 8] + 
+               Rational[-1, 8] 5^Rational[1, 2])^Rational[1, 2], 
+             Rational[1, 4] (-1 - 5^Rational[1, 2])}, {-
+             Sin[Rational[9, 50] Pi], -Cos[Rational[9, 50] Pi]}, {-
+             Sin[Rational[4, 25] Pi], -Cos[Rational[4, 25] Pi]}, {-
+             Sin[Rational[7, 50] Pi], -Cos[Rational[7, 50] Pi]}, {-
+             Sin[Rational[3, 25] Pi], -Cos[Rational[3, 25] Pi]}, {
+            Rational[1, 4] (1 - 5^
+              Rational[1, 2]), -(Rational[5, 8] + 
+               Rational[1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {-
+             Sin[Rational[2, 25] Pi], -Cos[Rational[2, 25] Pi]}, {-
+             Sin[Rational[3, 50] Pi], -Cos[Rational[3, 50] Pi]}, {-
+             Sin[Rational[1, 25] Pi], -Cos[Rational[1, 25] Pi]}, {-
+             Sin[Rational[1, 50] Pi], -Cos[Rational[1, 50] Pi]}, {0, -1}, {
+             Sin[Rational[1, 50] Pi], -Cos[Rational[1, 50] Pi]}, {
+             Sin[Rational[1, 25] Pi], -Cos[Rational[1, 25] Pi]}, {
+             Sin[Rational[3, 50] Pi], -Cos[Rational[3, 50] Pi]}, {
+             Sin[Rational[2, 25] Pi], -Cos[Rational[2, 25] Pi]}, {
+            Rational[1, 4] (-1 + 
+              5^Rational[1, 2]), -(Rational[5, 8] + 
+               Rational[1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {
+             Sin[Rational[3, 25] Pi], -Cos[Rational[3, 25] Pi]}, {
+             Sin[Rational[7, 50] Pi], -Cos[Rational[7, 50] Pi]}, {
+             Sin[Rational[4, 25] Pi], -Cos[Rational[4, 25] Pi]}, {
+             Sin[Rational[9, 50] Pi], -
+             Cos[Rational[9, 50] Pi]}, {(Rational[5, 8] + 
+              Rational[-1, 8] 5^Rational[1, 2])^Rational[1, 2], 
+             Rational[1, 4] (-1 - 5^Rational[1, 2])}, {
+             Sin[Rational[11, 50] Pi], -Cos[Rational[11, 50] Pi]}, {
+             Sin[Rational[6, 25] Pi], -Cos[Rational[6, 25] Pi]}, {
+             Cos[Rational[6, 25] Pi], -Sin[Rational[6, 25] Pi]}, {
+             Cos[Rational[11, 50] Pi], -Sin[Rational[11, 50] Pi]}, {
+            Rational[1, 4] (1 + 
+              5^Rational[1, 2]), -(Rational[5, 8] + 
+               Rational[-1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {
+             Cos[Rational[9, 50] Pi], -Sin[Rational[9, 50] Pi]}, {
+             Cos[Rational[4, 25] Pi], -Sin[Rational[4, 25] Pi]}, {
+             Cos[Rational[7, 50] Pi], -Sin[Rational[7, 50] Pi]}, {
+             Cos[Rational[3, 25] Pi], -
+             Sin[Rational[3, 25] Pi]}, {(Rational[5, 8] + 
+              Rational[1, 8] 5^Rational[1, 2])^Rational[1, 2], 
+             Rational[1, 4] (1 - 5^Rational[1, 2])}, {
+             Cos[Rational[2, 25] Pi], -Sin[Rational[2, 25] Pi]}, {
+             Cos[Rational[3, 50] Pi], -Sin[Rational[3, 50] Pi]}, {
+             Cos[Rational[1, 25] Pi], -Sin[Rational[1, 25] Pi]}, {
+             Cos[Rational[1, 50] Pi], -Sin[Rational[1, 50] Pi]}, {1, 0}}]}, 
+         ImageSize -> {20, 20}]}}, {
+      Hold[""], Manipulate`Dump`ThisIsNotAControl}, {
+      Hold["sampling resolution"], Manipulate`Dump`ThisIsNotAControl}, {{
+       Hold[$CellContext`resolution$$], 9, ""}, {
+      5 -> "32", 6 -> "64", 7 -> "128", 8 -> "256", 9 -> "512"}}, {
+      Hold[""], Manipulate`Dump`ThisIsNotAControl}, {
+      Hold["\[Lambda] scale"], Manipulate`Dump`ThisIsNotAControl}, {{
+       Hold[$CellContext`scale$$], 50, ""}, 2, 100}, {
+      Hold[""], Manipulate`Dump`ThisIsNotAControl}, {
+      Hold["number of slits"], Manipulate`Dump`ThisIsNotAControl}, {{
+       Hold[$CellContext`n$$], 2, ""}, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
+       13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+       31, 32, 33, 34, 35, 36, 37, 38, 39, 40}}, {
+      Hold[""], Manipulate`Dump`ThisIsNotAControl}, {
+      Hold["height of slit"], Manipulate`Dump`ThisIsNotAControl}, {{
+       Hold[$CellContext`height$$], 4, ""}, 0, 100}, {
+      Hold[""], Manipulate`Dump`ThisIsNotAControl}, {
+      Hold["width of slit"], Manipulate`Dump`ThisIsNotAControl}, {{
+       Hold[$CellContext`width$$], 1, ""}, 0, 10}, {
+      Hold[""], Manipulate`Dump`ThisIsNotAControl}, {
+      Hold["spacing between slits"], Manipulate`Dump`ThisIsNotAControl}, {{
+       Hold[$CellContext`spacing$$], 2, ""}, 0, 20}}, Typeset`size$$ = {
+    410., {215.73403309800196`, 221.46596690199803`}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = False}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`height$$ = 4, $CellContext`measurement$$ = 
+        Identity, $CellContext`n$$ = 2, $CellContext`resolution$$ = 
+        9, $CellContext`scale$$ = 50, $CellContext`spacing$$ = 
+        2, $CellContext`width$$ = 1, $CellContext`\[Rho]$$ = 3}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> $CellContext`M[$CellContext`measurement$$, \
+$CellContext`\[Rho]$$, $CellContext`resolution$$, $CellContext`scale$$, \
+$CellContext`n$$, $CellContext`height$$, $CellContext`width$$, \
+$CellContext`spacing$$], 
+      "Specifications" :> {
+       "display function", {{$CellContext`measurement$$, Identity, 
+          ""}, {$CellContext`SqrtSqrt -> 
+          "|\!\(\*SubscriptBox[\(E\), \(xy\)]\)\!\(\*SuperscriptBox[\(|\), \
+\(1/2\)]\)", Sqrt -> "|\!\(\*SubscriptBox[\(E\), \(xy\)]\)|"^Invisible[2], 
+          Identity -> 
+          "|\!\(\*SubscriptBox[\(E\), \(xy\)]\)\!\(\*SuperscriptBox[\(|\), \
+\(2\)]\)", Reverse -> "\!\(\*SubscriptBox[\(\[Rho]\), \(xy\)]\)"}}, "", 
+        "cause of diffraction", {{$CellContext`\[Rho]$$, 3, ""}, {
+         1 -> Graphics[{
+             Opacity[0], 
+             EdgeForm[
+              Thickness[Large]], 
+             Polygon[{{0, 1}, {-1, 0}, {0, -1}, {1, 0}}]}, 
+            ImageSize -> {20, 20}], 2 -> Graphics[{
+             Opacity[0], 
+             EdgeForm[
+              Thickness[Large]], 
+             Polygon[{{
+                Rational[1, 2], Rational[1, 2] 3^Rational[1, 2]}, {
+                Rational[-1, 2], Rational[1, 2] 3^Rational[1, 2]}, {-1, 0}, {
+                Rational[-1, 2], Rational[-1, 2] 3^Rational[1, 2]}, {
+                Rational[1, 2], Rational[-1, 2] 3^Rational[1, 2]}, {1, 0}}]}, 
+            ImageSize -> {20, 20}], 3 -> Graphics[{
+             Opacity[0], 
+             EdgeForm[
+              Thickness[Large]], 
+             Polygon[{{0, 1}, {-1, 0}, {0, -1}, {1, 0}}], 
+             
+             Polygon[{{-2^Rational[-1, 2], 2^
+                Rational[-1, 2]}, {-2^Rational[-1, 2], -2^Rational[-1, 2]}, {
+               2^Rational[-1, 2], -2^Rational[-1, 2]}, {
+               2^Rational[-1, 2], 2^Rational[-1, 2]}}]}, 
+            ImageSize -> {20, 20}], 4 -> Graphics[{
+             Opacity[0], 
+             EdgeForm[
+              Thickness[Large]], 
+             
+             Polygon[{{
+               Rational[1, 4] (-1 + 5^Rational[1, 2]), (Rational[5, 8] + 
+                 Rational[1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {
+               Rational[1, 4] (-1 - 5^Rational[1, 2]), (Rational[5, 8] + 
+                 Rational[-1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {
+               Rational[1, 4] (-1 - 5^
+                 Rational[1, 2]), -(Rational[5, 8] + 
+                  Rational[-1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {
+               Rational[1, 4] (-1 + 
+                 5^Rational[1, 2]), -(Rational[5, 8] + 
+                  Rational[1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {1, 0}}], 
+             
+             Polygon[{{
+               Rational[1, 4] (1 - 5^Rational[1, 2]), (Rational[5, 8] + 
+                 Rational[1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {-1, 0}, {
+               Rational[1, 4] (1 - 5^
+                 Rational[1, 2]), -(Rational[5, 8] + 
+                  Rational[1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {
+               Rational[1, 4] (1 + 
+                 5^Rational[1, 2]), -(Rational[5, 8] + 
+                  Rational[-1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {
+               Rational[1, 4] (1 + 5^Rational[1, 2]), (Rational[5, 8] + 
+                 Rational[-1, 8] 5^Rational[1, 2])^Rational[1, 2]}}]}, 
+            ImageSize -> {20, 20}], 0 -> " I I ", 5 -> Graphics[{
+             Opacity[0], 
+             EdgeForm[
+              Thickness[Large]], 
+             Polygon[{{
+                Cos[Rational[1, 50] Pi], 
+                Sin[Rational[1, 50] Pi]}, {
+                Cos[Rational[1, 25] Pi], 
+                Sin[Rational[1, 25] Pi]}, {
+                Cos[Rational[3, 50] Pi], 
+                Sin[Rational[3, 50] Pi]}, {
+                Cos[Rational[2, 25] Pi], 
+                Sin[
+                Rational[2, 25] Pi]}, {(Rational[5, 8] + 
+                 Rational[1, 8] 5^Rational[1, 2])^Rational[1, 2], 
+                Rational[1, 4] (-1 + 5^Rational[1, 2])}, {
+                Cos[Rational[3, 25] Pi], 
+                Sin[Rational[3, 25] Pi]}, {
+                Cos[Rational[7, 50] Pi], 
+                Sin[Rational[7, 50] Pi]}, {
+                Cos[Rational[4, 25] Pi], 
+                Sin[Rational[4, 25] Pi]}, {
+                Cos[Rational[9, 50] Pi], 
+                Sin[Rational[9, 50] Pi]}, {
+               Rational[1, 4] (1 + 5^Rational[1, 2]), (Rational[5, 8] + 
+                 Rational[-1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {
+                Cos[Rational[11, 50] Pi], 
+                Sin[Rational[11, 50] Pi]}, {
+                Cos[Rational[6, 25] Pi], 
+                Sin[Rational[6, 25] Pi]}, {
+                Sin[Rational[6, 25] Pi], 
+                Cos[Rational[6, 25] Pi]}, {
+                Sin[Rational[11, 50] Pi], 
+                Cos[
+                Rational[11, 50] Pi]}, {(Rational[5, 8] + 
+                 Rational[-1, 8] 5^Rational[1, 2])^Rational[1, 2], 
+                Rational[1, 4] (1 + 5^Rational[1, 2])}, {
+                Sin[Rational[9, 50] Pi], 
+                Cos[Rational[9, 50] Pi]}, {
+                Sin[Rational[4, 25] Pi], 
+                Cos[Rational[4, 25] Pi]}, {
+                Sin[Rational[7, 50] Pi], 
+                Cos[Rational[7, 50] Pi]}, {
+                Sin[Rational[3, 25] Pi], 
+                Cos[Rational[3, 25] Pi]}, {
+               Rational[1, 4] (-1 + 5^Rational[1, 2]), (Rational[5, 8] + 
+                 Rational[1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {
+                Sin[Rational[2, 25] Pi], 
+                Cos[Rational[2, 25] Pi]}, {
+                Sin[Rational[3, 50] Pi], 
+                Cos[Rational[3, 50] Pi]}, {
+                Sin[Rational[1, 25] Pi], 
+                Cos[Rational[1, 25] Pi]}, {
+                Sin[Rational[1, 50] Pi], 
+                Cos[Rational[1, 50] Pi]}, {0, 1}, {-Sin[Rational[1, 50] Pi], 
+                Cos[Rational[1, 50] Pi]}, {-Sin[Rational[1, 25] Pi], 
+                Cos[Rational[1, 25] Pi]}, {-Sin[Rational[3, 50] Pi], 
+                Cos[Rational[3, 50] Pi]}, {-Sin[Rational[2, 25] Pi], 
+                Cos[Rational[2, 25] Pi]}, {
+               Rational[1, 4] (1 - 5^Rational[1, 2]), (Rational[5, 8] + 
+                 Rational[1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {-
+                Sin[Rational[3, 25] Pi], 
+                Cos[Rational[3, 25] Pi]}, {-Sin[Rational[7, 50] Pi], 
+                Cos[Rational[7, 50] Pi]}, {-Sin[Rational[4, 25] Pi], 
+                Cos[Rational[4, 25] Pi]}, {-Sin[Rational[9, 50] Pi], 
+                Cos[
+                Rational[9, 50] 
+                 Pi]}, {-(Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+                 Rational[1, 2], Rational[1, 4] (1 + 5^Rational[1, 2])}, {-
+                Sin[Rational[11, 50] Pi], 
+                Cos[Rational[11, 50] Pi]}, {-Sin[Rational[6, 25] Pi], 
+                Cos[Rational[6, 25] Pi]}, {-Cos[Rational[6, 25] Pi], 
+                Sin[Rational[6, 25] Pi]}, {-Cos[Rational[11, 50] Pi], 
+                Sin[Rational[11, 50] Pi]}, {
+               Rational[1, 4] (-1 - 5^Rational[1, 2]), (Rational[5, 8] + 
+                 Rational[-1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {-
+                Cos[Rational[9, 50] Pi], 
+                Sin[Rational[9, 50] Pi]}, {-Cos[Rational[4, 25] Pi], 
+                Sin[Rational[4, 25] Pi]}, {-Cos[Rational[7, 50] Pi], 
+                Sin[Rational[7, 50] Pi]}, {-Cos[Rational[3, 25] Pi], 
+                Sin[
+                Rational[3, 25] 
+                 Pi]}, {-(Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+                 Rational[1, 2], Rational[1, 4] (-1 + 5^Rational[1, 2])}, {-
+                Cos[Rational[2, 25] Pi], 
+                Sin[Rational[2, 25] Pi]}, {-Cos[Rational[3, 50] Pi], 
+                Sin[Rational[3, 50] Pi]}, {-Cos[Rational[1, 25] Pi], 
+                Sin[Rational[1, 25] Pi]}, {-Cos[Rational[1, 50] Pi], 
+                Sin[Rational[1, 50] Pi]}, {-1, 
+               0}, {-Cos[Rational[1, 50] Pi], -Sin[Rational[1, 50] Pi]}, {-
+                Cos[Rational[1, 25] Pi], -Sin[Rational[1, 25] Pi]}, {-
+                Cos[Rational[3, 50] Pi], -Sin[Rational[3, 50] Pi]}, {-
+                Cos[Rational[2, 25] Pi], -
+                Sin[Rational[2, 25] Pi]}, {-(Rational[5, 8] + 
+                  Rational[1, 8] 5^Rational[1, 2])^Rational[1, 2], 
+                Rational[1, 4] (1 - 5^Rational[1, 2])}, {-
+                Cos[Rational[3, 25] Pi], -Sin[Rational[3, 25] Pi]}, {-
+                Cos[Rational[7, 50] Pi], -Sin[Rational[7, 50] Pi]}, {-
+                Cos[Rational[4, 25] Pi], -Sin[Rational[4, 25] Pi]}, {-
+                Cos[Rational[9, 50] Pi], -Sin[Rational[9, 50] Pi]}, {
+               Rational[1, 4] (-1 - 5^
+                 Rational[1, 2]), -(Rational[5, 8] + 
+                  Rational[-1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {-
+                Cos[Rational[11, 50] Pi], -Sin[Rational[11, 50] Pi]}, {-
+                Cos[Rational[6, 25] Pi], -Sin[Rational[6, 25] Pi]}, {-
+                Sin[Rational[6, 25] Pi], -Cos[Rational[6, 25] Pi]}, {-
+                Sin[Rational[11, 50] Pi], -
+                Cos[Rational[11, 50] Pi]}, {-(Rational[5, 8] + 
+                  Rational[-1, 8] 5^Rational[1, 2])^Rational[1, 2], 
+                Rational[1, 4] (-1 - 5^Rational[1, 2])}, {-
+                Sin[Rational[9, 50] Pi], -Cos[Rational[9, 50] Pi]}, {-
+                Sin[Rational[4, 25] Pi], -Cos[Rational[4, 25] Pi]}, {-
+                Sin[Rational[7, 50] Pi], -Cos[Rational[7, 50] Pi]}, {-
+                Sin[Rational[3, 25] Pi], -Cos[Rational[3, 25] Pi]}, {
+               Rational[1, 4] (1 - 5^
+                 Rational[1, 2]), -(Rational[5, 8] + 
+                  Rational[1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {-
+                Sin[Rational[2, 25] Pi], -Cos[Rational[2, 25] Pi]}, {-
+                Sin[Rational[3, 50] Pi], -Cos[Rational[3, 50] Pi]}, {-
+                Sin[Rational[1, 25] Pi], -Cos[Rational[1, 25] Pi]}, {-
+                Sin[Rational[1, 50] Pi], -Cos[Rational[1, 50] Pi]}, {0, -1}, {
+                Sin[Rational[1, 50] Pi], -Cos[Rational[1, 50] Pi]}, {
+                Sin[Rational[1, 25] Pi], -Cos[Rational[1, 25] Pi]}, {
+                Sin[Rational[3, 50] Pi], -Cos[Rational[3, 50] Pi]}, {
+                Sin[Rational[2, 25] Pi], -Cos[Rational[2, 25] Pi]}, {
+               Rational[1, 4] (-1 + 
+                 5^Rational[1, 2]), -(Rational[5, 8] + 
+                  Rational[1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {
+                Sin[Rational[3, 25] Pi], -Cos[Rational[3, 25] Pi]}, {
+                Sin[Rational[7, 50] Pi], -Cos[Rational[7, 50] Pi]}, {
+                Sin[Rational[4, 25] Pi], -Cos[Rational[4, 25] Pi]}, {
+                Sin[Rational[9, 50] Pi], -
+                Cos[Rational[9, 50] Pi]}, {(Rational[5, 8] + 
+                 Rational[-1, 8] 5^Rational[1, 2])^Rational[1, 2], 
+                Rational[1, 4] (-1 - 5^Rational[1, 2])}, {
+                Sin[Rational[11, 50] Pi], -Cos[Rational[11, 50] Pi]}, {
+                Sin[Rational[6, 25] Pi], -Cos[Rational[6, 25] Pi]}, {
+                Cos[Rational[6, 25] Pi], -Sin[Rational[6, 25] Pi]}, {
+                Cos[Rational[11, 50] Pi], -Sin[Rational[11, 50] Pi]}, {
+               Rational[1, 4] (1 + 
+                 5^Rational[1, 2]), -(Rational[5, 8] + 
+                  Rational[-1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {
+                Cos[Rational[9, 50] Pi], -Sin[Rational[9, 50] Pi]}, {
+                Cos[Rational[4, 25] Pi], -Sin[Rational[4, 25] Pi]}, {
+                Cos[Rational[7, 50] Pi], -Sin[Rational[7, 50] Pi]}, {
+                Cos[Rational[3, 25] Pi], -
+                Sin[Rational[3, 25] Pi]}, {(Rational[5, 8] + 
+                 Rational[1, 8] 5^Rational[1, 2])^Rational[1, 2], 
+                Rational[1, 4] (1 - 5^Rational[1, 2])}, {
+                Cos[Rational[2, 25] Pi], -Sin[Rational[2, 25] Pi]}, {
+                Cos[Rational[3, 50] Pi], -Sin[Rational[3, 50] Pi]}, {
+                Cos[Rational[1, 25] Pi], -Sin[Rational[1, 25] Pi]}, {
+                Cos[Rational[1, 50] Pi], -Sin[Rational[1, 50] Pi]}, {1, 0}}]},
+             ImageSize -> {20, 20}]}, ControlType -> SetterBar}, "", 
+        "sampling resolution", {{$CellContext`resolution$$, 9, ""}, {
+         5 -> "32", 6 -> "64", 7 -> "128", 8 -> "256", 9 -> "512"}}, "", 
+        "\[Lambda] scale", {{$CellContext`scale$$, 50, ""}, 2, 100, ImageSize -> 
+         Small, Appearance -> "Labeled"}, Delimiter, "", 
+        "number of slits", {{$CellContext`n$$, 2, ""}, {1, 2, 3, 4, 5, 6, 7, 
+         8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,
+          26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40}, 
+         Enabled :> Dynamic[
+           If[0 === $CellContext`\[Rho]$$, True, False]]}, "", 
+        "height of slit", {{$CellContext`height$$, 4, ""}, 0, 100, ImageSize -> 
+         Small, Enabled :> Dynamic[
+           If[0 === $CellContext`\[Rho]$$, True, False]], Appearance -> 
+         "Labeled"}, "", 
+        "width of slit", {{$CellContext`width$$, 1, ""}, 0, 10, ImageSize -> 
+         Small, Enabled :> Dynamic[
+           If[0 === $CellContext`\[Rho]$$, True, False]], Appearance -> 
+         "Labeled"}, "", 
+        "spacing between slits", {{$CellContext`spacing$$, 2, ""}, 0, 20, 
+         ImageSize -> Small, Enabled :> Dynamic[
+           If[0 === $CellContext`\[Rho]$$, True, False]], Appearance -> 
+         "Labeled"}}, "Options" :> {TrackedSymbols -> True}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{620., {247.13403309800196`, 252.86596690199804`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>(($CellContext`A8 = 
+       Eigenvectors[{{0, 0, 0, -1}, {1, 0, 0, 0}, {0, 1, 0, 0}, {0, 0, 1, 
+         0}}]; $CellContext`u8 = 
+       With[{$CellContext`v = Function[{$CellContext`a}, 
+            Part[$CellContext`A8, $CellContext`a]]}, 
+         RootApproximant[
+          Transpose[
+           Map[
+           Normalize, {$CellContext`v[1] + $CellContext`v[2], 
+             I ($CellContext`v[1] - $CellContext`v[2]), $CellContext`v[
+              3] + $CellContext`v[4], 
+             I ($CellContext`v[3] - $CellContext`v[4])}]]]]; $CellContext`A10 = 
+       Eigenvectors[{{0, 0, 0, 0, -1}, {1, 0, 0, 0, 0}, {0, 1, 0, 0, 0}, {0, 
+         0, 1, 0, 0}, {0, 0, 0, 1, 0}}]; $CellContext`u10 = 
+       With[{$CellContext`v = Function[{$CellContext`a}, 
+            Part[$CellContext`A10, $CellContext`a]]}, 
+         Simplify[
+          Re[
+           ToRadicals[
+            
+            Transpose[(1/Sqrt[
+              10]) {$CellContext`v[1] + $CellContext`v[2], 
+               I ($CellContext`v[1] - $CellContext`v[2]), $CellContext`v[
+                3] + $CellContext`v[4], 
+               I ($CellContext`v[3] - $CellContext`v[4]), {1, 1, 1, 1, 1} 
+               Sqrt[2]}]]]]]; $CellContext`u4 = (1/3) {{1, 0}, {0, 
+         1}}; $CellContext`u6 = Map[(1/3) {
+           Cos[Pi (#/3)], 
+           Sin[Pi (#/3)]}& , 
+         Range[3]]; $CellContext`generators = 
+       Map[Join[#, -#]& , {$CellContext`u4, $CellContext`u6, $CellContext`u8, \
+$CellContext`u10}]; $CellContext`lattice[
+         Pattern[$CellContext`generators, 
+          Blank[List]], 
+         Pattern[$CellContext`n, 
+          Blank[Integer]]] := Union[
+         Map[
+          Expand[Total], 
+          Apply[Join, 
+           Map[Tuples[$CellContext`generators, #]& , 
+            Range[$CellContext`n]]]]]; $CellContext`latticeWindow[
+         Pattern[$CellContext`generators, 
+          Blank[List]], 
+         Pattern[$CellContext`n, 
+          Blank[Integer]], 
+         Pattern[$CellContext`select, 
+          Blank[List]], 
+         Pattern[$CellContext`window, 
+          Blank[List]], 
+         Pattern[$CellContext`windowR, 
+          Blank[]]] := Union[
+         Expand[
+          Union[
+           Part[
+            Select[
+             Map[Total, 
+              Apply[Join, 
+               Map[Tuples[$CellContext`generators, #]& , 
+                Range[$CellContext`n]]]], Norm[
+               N[
+                Part[#, $CellContext`window]]] < $CellContext`windowR& ], 
+            All, $CellContext`select]]]]; $CellContext`initialshape = 
+       ReplaceAll[{{{
+           2 $CellContext`ss, $CellContext`ss}, {(-2) $CellContext`ss, \
+-$CellContext`ss}, {
+           2 $CellContext`ss, -$CellContext`ss}}, {{(-2) $CellContext`ss, \
+-$CellContext`ss}, {
+           2 $CellContext`ss, $CellContext`ss}, {(-2) $CellContext`ss, \
+$CellContext`ss}}}, $CellContext`ss -> 12]; $CellContext`Recurse[{
+          Pattern[$CellContext`a, 
+           Blank[]], 
+          Pattern[$CellContext`b, 
+           Blank[]], 
+          Pattern[$CellContext`c, 
+           Blank[]]}] := 
+       With[{$CellContext`d = (4 $CellContext`a + $CellContext`b)/
+           5}, {{$CellContext`a, $CellContext`c, $CellContext`d}, \
+{$CellContext`d, ($CellContext`b + $CellContext`c)/
+           2, ($CellContext`c + $CellContext`d)/
+           2}, {($CellContext`b + $CellContext`c)/
+           2, $CellContext`d, ($CellContext`b + $CellContext`d)/
+           2}, {$CellContext`c, ($CellContext`b + $CellContext`c)/
+           2, ($CellContext`c + $CellContext`d)/
+           2}, {($CellContext`b + $CellContext`c)/
+           2, $CellContext`b, ($CellContext`b + $CellContext`d)/
+           2}}]; $CellContext`pinwheelPts = Select[
+         Union[
+          Flatten[
+           Nest[Map[$CellContext`Recurse, 
+             Flatten[#, 1]]& , {$CellContext`initialshape}, 5], 2]], Norm[#] < 
+         12& ]; $CellContext`pts = {
+         $CellContext`lattice[
+          Part[$CellContext`generators, 1], 6], 
+         $CellContext`lattice[
+          Part[$CellContext`generators, 2], 6], 
+         $CellContext`latticeWindow[
+          Part[$CellContext`generators, 3], 3, {1, 2}, {3, 4}, 3], 
+         $CellContext`latticeWindow[
+          Part[$CellContext`generators, 4], 3, {1, 2}, {3, 4}, 
+          1.5], $CellContext`pinwheelPts}; $CellContext`Slit[
+         Pattern[$CellContext`number, 
+          Blank[]], 
+         Pattern[$CellContext`h, 
+          Blank[]], 
+         Pattern[$CellContext`w, 
+          Blank[]], 
+         Pattern[$CellContext`s, 
+          Blank[]], 
+         Pattern[$CellContext`waveLength, 
+          Blank[]], 
+         Pattern[$CellContext`n, 
+          Blank[]]] := 
+       Module[{$CellContext`height = 
+          Floor[$CellContext`h (
+             2^6/$CellContext`waveLength)], $CellContext`width = 
+          Floor[$CellContext`w (
+             2^6/$CellContext`waveLength)], $CellContext`spacing = 
+          Floor[$CellContext`s (
+             2^6/$CellContext`waveLength)], $CellContext`xStart, \
+$CellContext`yStart, $CellContext`slitRow, $CellContext`\[Rho]}, \
+$CellContext`xStart = 
+          Floor[(2^($CellContext`n + 1) - ($CellContext`number - 
+              1) $CellContext`spacing - $CellContext`number \
+$CellContext`width)/2]; $CellContext`yStart = 
+          Floor[(2^($CellContext`n + 1) - $CellContext`height)/
+            2]; {$CellContext`xStart, $CellContext`yStart}; \
+$CellContext`slitRow = PadRight[
+            Flatten[{
+              Table[0, {$CellContext`xStart}], 
+              Table[{
+                Table[1, {$CellContext`width}], 
+                Table[0, {$CellContext`spacing}]}, {$CellContext`number - 1}], 
+              Table[1, {$CellContext`width}]}], 
+            2^($CellContext`n + 1)]; $CellContext`\[Rho] = Join[
+            Table[
+             Table[0, {2^($CellContext`n + 1)}], {$CellContext`yStart}], 
+            Table[$CellContext`slitRow, {$CellContext`height}], 
+            Table[
+             Table[0, {2^($CellContext`n + 1)}], {
+             2^($CellContext`n + 
+                1) - $CellContext`height - $CellContext`yStart}]]; 
+         If[$CellContext`yStart > 0, $CellContext`\[Rho], 
+           
+           Table[$CellContext`slitRow, {
+            2^($CellContext`n + 1)}]]]; $CellContext`space[
+         Pattern[$CellContext`pts, 
+          Blank[List]], 
+         Pattern[$CellContext`l, 
+          Blank[]], 
+         Pattern[$CellContext`n, 
+          Blank[Integer]]] := BinCounts[
+         N[$CellContext`pts], {-$CellContext`l, $CellContext`l, \
+$CellContext`l/
+          2^$CellContext`n}, {-$CellContext`l, $CellContext`l, $CellContext`l/
+          2^$CellContext`n}]; $CellContext`Intensity[
+         Pattern[$CellContext`space, 
+          Blank[List]], 
+         Pattern[$CellContext`n, 
+          Blank[Integer]]] := 
+       With[{$CellContext`inverseSpace = 
+          Fourier[$CellContext`phi[$CellContext`n + 1] $CellContext`space]}, 
+         Part[
+          Chop[
+          Conjugate[$CellContext`inverseSpace] $CellContext`inverseSpace], 
+          Range[
+          2^($CellContext`n - 1) + 1, 2^($CellContext`n - 1) + 
+           2^$CellContext`n], 
+          Range[
+          2^($CellContext`n - 1) + 1, 2^($CellContext`n - 1) + 
+           2^$CellContext`n]]]; $CellContext`phi[
+         Pattern[$CellContext`n, 
+          Blank[]]] := With[{$CellContext`a = Table[
+            If[
+             EvenQ[$CellContext`i], 1, -1], {$CellContext`i, 1, 
+             2^$CellContext`n}]}, 
+         Outer[Times, $CellContext`a, $CellContext`a, 1]]; $CellContext`im = 
+       410; $CellContext`M[
+         Pattern[$CellContext`measurement, 
+          Blank[]], 
+         Pattern[$CellContext`\[Rho], 
+          Blank[]], 
+         Pattern[$CellContext`resolution, 
+          Blank[Integer]], 
+         Pattern[$CellContext`metric, 
+          Blank[]], 
+         Pattern[$CellContext`number, 
+          Blank[]], 
+         Pattern[$CellContext`height, 
+          Blank[]], 
+         Pattern[$CellContext`width, 
+          Blank[]], 
+         Pattern[$CellContext`spacing, 
+          Blank[]]] := If[$CellContext`\[Rho] == 0, 
+         $CellContext`S[$CellContext`measurement, $CellContext`number, \
+$CellContext`height, $CellContext`width, $CellContext`spacing, \
+$CellContext`metric, $CellContext`resolution], 
+         $CellContext`Crystal[$CellContext`measurement, $CellContext`\[Rho], \
+$CellContext`metric, $CellContext`resolution]]; $CellContext`S[
+         Pattern[$CellContext`measurement, 
+          Blank[]], 
+         Pattern[$CellContext`number, 
+          Blank[]], 
+         Pattern[$CellContext`height, 
+          Blank[]], 
+         Pattern[$CellContext`width, 
+          Blank[]], 
+         Pattern[$CellContext`spacing, 
+          Blank[]], 
+         Pattern[$CellContext`metric, 
+          Blank[]], 
+         Pattern[$CellContext`resolution, 
+          Blank[Integer]]] := If[$CellContext`measurement === Reverse, 
+         Column[{
+           (ArrayPlot[
+            ReplaceAll[#, {0 -> 1, 1 -> 0}], 
+            ImageSize -> {$CellContext`im, $CellContext`im}]& )[
+            $CellContext`Slit[$CellContext`number, $CellContext`height, \
+$CellContext`width, $CellContext`spacing, $CellContext`metric, 9]], 
+           $CellContext`DensityScale[0, 1]}, Center], 
+         $CellContext`DiffractionPattern[
+          $CellContext`Intensity[
+           $CellContext`Slit[$CellContext`number, $CellContext`height, \
+$CellContext`width, $CellContext`spacing, $CellContext`metric, \
+$CellContext`resolution], $CellContext`resolution], \
+$CellContext`measurement]]; $CellContext`Crystal[
+         Pattern[$CellContext`measurement, 
+          Blank[]], 
+         Pattern[$CellContext`\[Rho], 
+          Blank[]], 
+         Pattern[$CellContext`metric, 
+          Blank[]], 
+         Pattern[$CellContext`resolution, 
+          Blank[Integer]]] := If[$CellContext`measurement === Reverse, 
+         Column[{
+           Graphics[
+            Map[Point, 
+             Part[$CellContext`pts, $CellContext`\[Rho]]], 
+            PlotRange -> {{-$CellContext`metric, $CellContext`metric}, \
+{-$CellContext`metric, $CellContext`metric}}, 
+            ImageSize -> {$CellContext`im, $CellContext`im}, 
+            ImagePadding -> {{Automatic, Automatic}, {Automatic, 5}}], 
+           $CellContext`DensityScale[0, 1]}, Center], 
+         $CellContext`DiffractionPattern[
+          $CellContext`Intensity[
+           $CellContext`space[
+            
+            Part[$CellContext`pts, $CellContext`\[Rho]], (1/
+             2^(9 - $CellContext`resolution)) $CellContext`metric, \
+$CellContext`resolution], $CellContext`resolution], \
+$CellContext`measurement]]; $CellContext`DiffractionPattern[
+         Pattern[$CellContext`intensity, 
+          Blank[List]], 
+         Pattern[$CellContext`measurement, 
+          Blank[]]] := 
+       Module[{$CellContext`flat = 
+          Flatten[$CellContext`intensity], $CellContext`max, \
+$CellContext`min, $CellContext`scaledMax, $CellContext`inverse}, \
+$CellContext`max = Max[$CellContext`flat]; $CellContext`min = 
+          Min[$CellContext`flat]; $CellContext`scaledMax = \
+$CellContext`measurement[$CellContext`max]; $CellContext`inverse = 
+          Map[$CellContext`scaledMax - #& , 
+            $CellContext`measurement[$CellContext`intensity], {-1}]; Column[{
+            
+            ArrayPlot[$CellContext`inverse, 
+             ImagePadding -> {{Automatic, Automatic}, {Automatic, 5}}, 
+             ImageSize -> {$CellContext`im, $CellContext`im}], 
+            $CellContext`IntensityScale[
+            "0", "1", $CellContext`min, $CellContext`max, \
+$CellContext`measurement]}, Center]]; $CellContext`DensityScale[
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`b, 
+          Blank[]]] := Text[
+         Row[{
+           Subscript["\[Rho]", 
+            Style["xy", Italic]], " / ", 
+           Subscript["\[Rho]", "00"], "    ", 
+           ArrayPlot[{{0}}, ImageSize -> {20, 20}, Frame -> True], Null, 
+           " ", $CellContext`a, "      ", 
+           ArrayPlot[{{1}}, ImageSize -> {20, 20}, Frame -> True], 
+           " ", $CellContext`b}]]; $CellContext`IntensityScale[
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`b, 
+          Blank[]], 
+         Pattern[$CellContext`min, 
+          Blank[]], 
+         Pattern[$CellContext`max, 
+          Blank[]], 
+         Pattern[$CellContext`function, 
+          Blank[]]] := Text[
+         Row[{"|", 
+           Style["\!\(\*SubscriptBox[\(E\), \(xy\)]\)", Italic], 
+           "\!\(\*SuperscriptBox[\(|\), \(2\)]\) / |", 
+           Subscript[
+            Style["E", Italic], "00"], "\!\(\*SuperscriptBox[\(|\), \(2\)]\)",
+            "    ", 0, 
+           ArrayPlot[
+            Table[Part[
+               $CellContext`function[{$CellContext`max}], 
+               1] - $CellContext`function[(Range[0, 20]/
+               20) $CellContext`max], {1}], Mesh -> True, Frame -> False, 
+            ImageSize -> {200, 30}], 1}]]; $CellContext`SqrtSqrt[
+         Pattern[$CellContext`x, 
+          Blank[]]] := Sqrt[
+         Sqrt[$CellContext`x]]; $CellContext`symmetryIcon[
+         Pattern[$CellContext`n, 
+          Blank[]]] := Graphics[{
+          Opacity[0], 
+          EdgeForm[Thick], 
+          Polygon[
+           Map[{
+             Cos[2 (Pi/$CellContext`n) #], 
+             Sin[2 (Pi/$CellContext`n) #]}& , 
+            Range[$CellContext`n]]]}, 
+         ImageSize -> {20, 20}]; $CellContext`forbiddenSymmetryIcon[
+         Pattern[$CellContext`n, 
+          Blank[Integer]]] := Graphics[{
+          Opacity[0], 
+          EdgeForm[Thick], 
+          Polygon[
+           Map[{
+             Cos[2 (Pi/$CellContext`n) #], 
+             Sin[2 (Pi/$CellContext`n) #]}& , 
+            Range[$CellContext`n]]], 
+          Polygon[
+           Map[{
+             Cos[2 (Pi/$CellContext`n) # + Pi/$CellContext`n], 
+             Sin[2 (Pi/$CellContext`n) # + Pi/$CellContext`n]}& , 
+            Range[$CellContext`n]]]}, ImageSize -> {20, 20}]); 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.9174118772121105`*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"c614fa7f-6d78-47a6-a320-f9efc0532d99"]
+}, Open  ]]
+},
+WindowSize->{1440., 741.75},
+WindowMargins->{{-6, Automatic}, {Automatic, -6}},
+FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (January 30, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"a1742465-d7d5-4ebf-bf6c-e73252621e8a"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 46772, 1085, 3914, "Input",ExpressionUUID->"47dd9b95-b4c4-4ff7-a2eb-596a40a16d35",
+ CellID->1301673421],
+Cell[47355, 1109, 42035, 845, 519, "Output",ExpressionUUID->"c614fa7f-6d78-47a6-a320-f9efc0532d99"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
